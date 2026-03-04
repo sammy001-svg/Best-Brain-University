@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Academic Programs - Best Brain International University</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .programs-filter {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 50px;
+        flex-wrap: wrap;
+      }
+      .filter-btn {
+        background: transparent;
+        border: 2px solid #be2ed6;
+        color: #be2ed6;
+        padding: 10px 25px;
+        border-radius: 30px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .filter-btn:hover, .filter-btn.active {
+        background: #be2ed6;
+        color: white;
+      }
+
+      .program-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 30px;
+      }
+
+      .program-card {
+        background: white;
+        border-radius: 8px;
+        padding: 40px 30px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        border: 1px solid #f4f7fa;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        z-index: 1;
+      }
+      
+      .program-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: #f7a800;
+        transition: width 0.3s ease;
+        z-index: -1;
+      }
+
+      .program-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+      }
+
+      .program-card:hover::before {
+        width: 100%;
+        opacity: 0.03;
+      }
+
+      .program-award {
+        display: inline-block;
+        background: rgba(247, 168, 0, 0.1);
+        color: #f7a800;
+        padding: 5px 12px;
+        border-radius: 4px;
+        font-size: 13px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        letter-spacing: 0.5px;
+      }
+
+      .program-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 24px;
+        color: #be2ed6;
+        margin-bottom: 15px;
+      }
+
+      .program-school {
+        color: #666;
+        font-size: 15px;
+        margin-bottom: 25px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      
+      .program-school i {
+         color: #aaa;
+      }
+
+      .program-meta {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        border-top: 1px solid #eee;
+        padding-top: 20px;
+        margin-bottom: 25px;
+      }
+
+      .meta-item {
+        font-size: 14px;
+        color: #777;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      
+      .meta-item i {
+        color: #be2ed6;
+      }
+
+      .program-link {
+        color: #be2ed6;
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: color 0.3s ease;
+      }
+
+      .program-link:hover {
+        color: #f7a800;
+      }
+
+      /* Certificate specific styling */
+      .cert-card .program-award {
+        background: rgba(190, 46, 214, 0.1);
+        color: #be2ed6;
+      }
+      .cert-card::before {
+        background: #be2ed6;
+      }
+      
+      /* Additional Information Banner */
+      .info-banner {
+         background: #f7a800;
+         padding: 60px 0;
+         text-align: center;
+         color: #be2ed6;
+         margin-top: 80px;
+      }
+      
+      .info-banner h2 {
+         font-family: 'Playfair Display', serif;
+         font-size: 36px;
+         margin-bottom: 20px;
+      }
+      
+      .btn-outline-dark {
+         display: inline-block;
+         border: 2px solid #be2ed6;
+         color: #be2ed6;
+         padding: 12px 30px;
+         border-radius: 4px;
+         font-weight: 600;
+         text-decoration: none;
+         transition: all 0.3s ease;
+         background: transparent;
+      }
+      
+      .btn-outline-dark:hover {
+         background: #be2ed6;
+         color: white;
+      }
+
+    </style>
+  </head>
+  <body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <div class="container top-bar-container">
+        <div class="top-bar-left">
+          <a href="mailto:info@bbiu.org.lr" class="contact-item"
+            ><i class="fa-regular fa-envelope"></i> info@bbiu.org.lr</a
+          >
+          <span class="contact-item"
+            ><i class="fa-solid fa-phone"></i> +231-770-370-894 / +231-881-324-323</span
+          >
+        </div>
+        <div class="top-bar-right">
+          <a href="#">Alumni</a>
+          <a href="#">Calendar</a>
+          <a href="#">Portal</a>
+          <a href="#" class="btn-support">Support BBU</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header class="main-header">
+      <div class="container header-container">
+        <div class="logo">
+          <img
+            src="assets/logo.png"
+            alt="Best Brain International University Logo"
+            class="logo-img"
+          />
+          <div class="logo-text">
+            <span class="logo-title">Best Brain</span>
+            <span class="logo-subtitle">International University</span>
+          </div>
+        </div>
+
+        <nav class="main-nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li class="has-mega-menu">
+              <a href="#">About Us <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 5px;"></i></a>
+              <div class="mega-menu">
+                <div class="mega-menu-content">
+                  <ul class="mega-menu-list">
+                    <li><a href="about-overview.html"><i class="fa-solid fa-angle-right"></i> Overview</a></li>
+                    <li><a href="history.html"><i class="fa-solid fa-angle-right"></i> History</a></li>
+                    <li><a href="mission-vision.html"><i class="fa-solid fa-angle-right"></i> Mission & Vision</a></li>
+                    <li><a href="leadership.html"><i class="fa-solid fa-angle-right"></i> Leadership & Directorates</a></li>
+                    <li><a href="affiliates.html"><i class="fa-solid fa-angle-right"></i> Affiliates & Partners</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="has-mega-menu">
+              <a href="#" class="active">Academics <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 5px;"></i></a>
+              <div class="mega-menu">
+                <div class="mega-menu-content">
+                  <ul class="mega-menu-list">
+                    <li><a href="academics-overview.html"><i class="fa-solid fa-angle-right"></i> Overview</a></li>
+                    <li><a href="colleges.html"><i class="fa-solid fa-angle-right"></i> Colleges & Schools</a></li>
+                    <li><a href="programs.html"><i class="fa-solid fa-angle-right"></i> Programs</a></li>
+                    <li><a href="calendar.html"><i class="fa-solid fa-angle-right"></i> Academic Calendar</a></li>
+                    <li><a href="library.html"><i class="fa-solid fa-angle-right"></i> Library</a></li>
+                    <li><a href="journals.html"><i class="fa-solid fa-angle-right"></i> BBIU Journals</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="has-mega-menu">
+              <a href="#">Admissions <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 5px;"></i></a>
+              <div class="mega-menu">
+                <div class="mega-menu-content">
+                  <ul class="mega-menu-list">
+                    <li><a href="admissions-overview.html"><i class="fa-solid fa-angle-right"></i> Overview</a></li>
+                    <li><a href="undergraduate-admissions.html"><i class="fa-solid fa-angle-right"></i> Undergraduate</a></li>
+                    <li><a href="transfer-admissions.html"><i class="fa-solid fa-angle-right"></i> Transfer Students</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+
+<li><a href="student-life.html">Student Life</a></li>
+            <li class="search-icon">
+              <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Page Banner -->
+    <div class="page-banner" style="background-image: url('assets/147182941_121194853219346_1814117549398252880_n.jpg'); position: relative; padding: 120px 0; text-align: center; color: white; background-size: cover; background-position: center 30%;">
+      <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(190, 46, 214, 0.85);"></div>
+      <div class="container" style="position: relative; z-index: 1;">
+        <h1 style="font-family: 'Playfair Display', serif; font-size: 48px; margin-bottom: 15px;">Academic Programs</h1>
+        <div style="font-size: 16px;">
+          <a href="index.html" style="color: #f7a800; text-decoration: none;">Home</a> 
+          <span style="margin: 0 10px;"><i class="fa-solid fa-angle-right"></i></span> 
+          <span>Academics</span>
+          <span style="margin: 0 10px;"><i class="fa-solid fa-angle-right"></i></span> 
+          <span>Programs</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Intro Text & Filter -->
+    <section class="pt-80 pb-40">
+      <div class="container text-center">
+        <div style="max-width: 800px; margin: 0 auto 50px;">
+          <h2 class="section-title" style="font-family: 'Playfair Display', serif; font-size: 32px; color: #be2ed6; margin-bottom: 20px;">Find Your Path</h2>
+          <p style="color: #555; font-size: 16px; line-height: 1.8;">
+             Explore our comprehensive list of undergraduate degrees and professional certificate programs. Whether you're beginning your academic journey or looking to enhance your professional skills, BBIU offers the curriculum you need to succeed.
+          </p>
+        </div>
+        
+        <!-- Filter Buttons (Functional) -->
+        <div class="programs-filter">
+           <button class="filter-btn active" data-filter="all">All Programs</button>
+           <button class="filter-btn" data-filter="bachelors">Undergraduate (Bachelors)</button>
+           <button class="filter-btn" data-filter="certificate">Certificate Programs</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Programs Listing -->
+    <section class="programs-section pb-80">
+       <div class="container">
+          <div class="program-grid">
+             
+             <!-- Business Programs -->
+             <div class="program-card" data-category="bachelors">
+                <span class="program-award">Bachelors Degree</span>
+                <h3 class="program-title">Accounting (BBA)</h3>
+                <div class="program-school"><i class="fa-solid fa-building-columns"></i> School of Business</div>
+                <div class="program-meta">
+                   <div class="meta-item"><i class="fa-regular fa-clock"></i> 4 Years</div>
+                   <div class="meta-item"><i class="fa-solid fa-location-dot"></i> On-Campus</div>
+                </div>
+                <a href="#" class="program-link">View Program Details <i class="fa-solid fa-arrow-right"></i></a>
+             </div>
+
+             <div class="program-card" data-category="bachelors">
+                <span class="program-award">Bachelors Degree</span>
+                <h3 class="program-title">Economics (BSc)</h3>
+                <div class="program-school"><i class="fa-solid fa-building-columns"></i> School of Business</div>
+                <div class="program-meta">
+                   <div class="meta-item"><i class="fa-regular fa-clock"></i> 4 Years</div>
+                   <div class="meta-item"><i class="fa-solid fa-location-dot"></i> On-Campus</div>
+                </div>
+                <a href="#" class="program-link">View Program Details <i class="fa-solid fa-arrow-right"></i></a>
+             </div>
+
+             <div class="program-card" data-category="bachelors">
+                <span class="program-award">Bachelors Degree</span>
+                <h3 class="program-title">Management (BBA)</h3>
+                <div class="program-school"><i class="fa-solid fa-building-columns"></i> School of Business</div>
+                <div class="program-meta">
+                   <div class="meta-item"><i class="fa-regular fa-clock"></i> 4 Years</div>
+                   <div class="meta-item"><i class="fa-solid fa-location-dot"></i> On-Campus</div>
+                </div>
+                <a href="#" class="program-link">View Program Details <i class="fa-solid fa-arrow-right"></i></a>
+             </div>
+
+             <div class="program-card" data-category="bachelors">
+                <span class="program-award">Bachelors Degree</span>
+                <h3 class="program-title">Public Administration (BBA)</h3>
+                <div class="program-school"><i class="fa-solid fa-building-columns"></i> School of Business</div>
+                <div class="program-meta">
+                   <div class="meta-item"><i class="fa-regular fa-clock"></i> 4 Years</div>
+                   <div class="meta-item"><i class="fa-solid fa-location-dot"></i> On-Campus</div>
+                </div>
+                <a href="#" class="program-link">View Program Details <i class="fa-solid fa-arrow-right"></i></a>
+             </div>
+
+             <!-- Education Programs -->
+             <div class="program-card" data-category="bachelors">
+                <span class="program-award">Bachelors Degree</span>
+                <h3 class="program-title">Primary Education (BEd)</h3>
+                <div class="program-school"><i class="fa-solid fa-book-open"></i> School of Education</div>
+                <div class="program-meta">
+                   <div class="meta-item"><i class="fa-regular fa-clock"></i> 4 Years</div>
+                   <div class="meta-item"><i class="fa-solid fa-location-dot"></i> On-Campus</div>
+                </div>
+                <a href="#" class="program-link">View Program Details <i class="fa-solid fa-arrow-right"></i></a>
+             </div>
+
+             <div class="program-card" data-category="bachelors">
+                <span class="program-award">Bachelors Degree</span>
+                <h3 class="program-title">Education (Guidance & Counseling)</h3>
+                <div class="program-school"><i class="fa-solid fa-book-open"></i> School of Education</div>
+                <div class="program-meta">
+                   <div class="meta-item"><i class="fa-regular fa-clock"></i> 4 Years</div>
+                   <div class="meta-item"><i class="fa-solid fa-location-dot"></i> On-Campus</div>
+                </div>
+                <a href="#" class="program-link">View Program Details <i class="fa-solid fa-arrow-right"></i></a>
+             </div>
+
+             <div class="program-card" data-category="bachelors">
+                <span class="program-award">Bachelors Degree</span>
+                <h3 class="program-title">Secondary Education (BEd)</h3>
+                <div class="program-school"><i class="fa-solid fa-book-open"></i> School of Education</div>
+                <div class="program-meta">
+                   <div class="meta-item"><i class="fa-regular fa-clock"></i> 4 Years</div>
+                   <div class="meta-item"><i class="fa-solid fa-location-dot"></i> On-Campus</div>
+                </div>
+                <a href="#" class="program-link">View Program Details <i class="fa-solid fa-arrow-right"></i></a>
+             </div>
+
+             <!-- Liberal Arts Programs -->
+             <div class="program-card" data-category="bachelors">
+                <span class="program-award">Bachelors Degree</span>
+                <h3 class="program-title">Sociology (BA)</h3>
+                <div class="program-school"><i class="fa-solid fa-landmark"></i> School of Liberal Arts & Social Sciences</div>
+                <div class="program-meta">
+                   <div class="meta-item"><i class="fa-regular fa-clock"></i> 4 Years</div>
+                   <div class="meta-item"><i class="fa-solid fa-location-dot"></i> On-Campus</div>
+                </div>
+                <a href="#" class="program-link">View Program Details <i class="fa-solid fa-arrow-right"></i></a>
+             </div>
+
+             <div class="program-card" data-category="bachelors">
+                <span class="program-award">Bachelors Degree</span>
+                <h3 class="program-title">Mass Communications (BA)</h3>
+                <div class="program-school"><i class="fa-solid fa-landmark"></i> School of Liberal Arts & Social Sciences</div>
+                <div class="program-meta">
+                   <div class="meta-item"><i class="fa-regular fa-clock"></i> 4 Years</div>
+                   <div class="meta-item"><i class="fa-solid fa-location-dot"></i> On-Campus</div>
+                </div>
+                <a href="#" class="program-link">View Program Details <i class="fa-solid fa-arrow-right"></i></a>
+             </div>
+
+             <div class="program-card" data-category="bachelors">
+                <span class="program-award">Bachelors Degree</span>
+                <h3 class="program-title">History & International Relations (BA)</h3>
+                <div class="program-school"><i class="fa-solid fa-landmark"></i> School of Liberal Arts & Social Sciences</div>
+                <div class="program-meta">
+                   <div class="meta-item"><i class="fa-regular fa-clock"></i> 4 Years</div>
+                   <div class="meta-item"><i class="fa-solid fa-location-dot"></i> On-Campus</div>
+                </div>
+                <a href="#" class="program-link">View Program Details <i class="fa-solid fa-arrow-right"></i></a>
+             </div>
+             
+             <div class="program-card" data-category="bachelors">
+                <span class="program-award">Bachelors Degree</span>
+                <h3 class="program-title">English and Literature (BA)</h3>
+                <div class="program-school"><i class="fa-solid fa-landmark"></i> School of Liberal Arts & Social Sciences</div>
+                <div class="program-meta">
+                   <div class="meta-item"><i class="fa-regular fa-clock"></i> 4 Years</div>
+                   <div class="meta-item"><i class="fa-solid fa-location-dot"></i> On-Campus</div>
+                </div>
+                <a href="#" class="program-link">View Program Details <i class="fa-solid fa-arrow-right"></i></a>
+             </div>
+
+             <div class="program-card" data-category="bachelors">
+                <span class="program-award">Bachelors Degree</span>
+                <h3 class="program-title">Social Works (BA)</h3>
+                <div class="program-school"><i class="fa-solid fa-landmark"></i> School of Liberal Arts & Social Sciences</div>
+                <div class="program-meta">
+                   <div class="meta-item"><i class="fa-regular fa-clock"></i> 4 Years</div>
+                   <div class="meta-item"><i class="fa-solid fa-location-dot"></i> On-Campus</div>
+                </div>
+                <a href="#" class="program-link">View Program Details <i class="fa-solid fa-arrow-right"></i></a>
+             </div>
+
+             <div class="program-card" data-category="bachelors">
+                <span class="program-award">Bachelors Degree</span>
+                <h3 class="program-title">Criminal Justice (BA)</h3>
+                <div class="program-school"><i class="fa-solid fa-landmark"></i> School of Liberal Arts & Social Sciences</div>
+                <div class="program-meta">
+                   <div class="meta-item"><i class="fa-regular fa-clock"></i> 4 Years</div>
+                   <div class="meta-item"><i class="fa-solid fa-location-dot"></i> On-Campus</div>
+                </div>
+                <a href="#" class="program-link">View Program Details <i class="fa-solid fa-arrow-right"></i></a>
+             </div>
+
+             <!-- IT Programs -->
+             <div class="program-card" data-category="bachelors">
+                <span class="program-award">Bachelors Degree</span>
+                <h3 class="program-title">Information Technology (BSc)</h3>
+                <div class="program-school"><i class="fa-solid fa-laptop-code"></i> School of Information Technology</div>
+                <div class="program-meta">
+                   <div class="meta-item"><i class="fa-regular fa-clock"></i> 4 Years</div>
+                   <div class="meta-item"><i class="fa-solid fa-location-dot"></i> On-Campus</div>
+                </div>
+                <a href="#" class="program-link">View Program Details <i class="fa-solid fa-arrow-right"></i></a>
+             </div>
+
+             <!-- Health Science Programs -->
+             <div class="program-card" data-category="bachelors">
+                <span class="program-award">Bachelors Degree</span>
+                <h3 class="program-title">Environmental Science (BSc)</h3>
+                <div class="program-school"><i class="fa-solid fa-heart-pulse"></i> School of Health Science</div>
+                <div class="program-meta">
+                   <div class="meta-item"><i class="fa-regular fa-clock"></i> 4 Years</div>
+                   <div class="meta-item"><i class="fa-solid fa-location-dot"></i> On-Campus</div>
+                </div>
+                <a href="#" class="program-link">View Program Details <i class="fa-solid fa-arrow-right"></i></a>
+             </div>
+
+             <div class="program-card" data-category="bachelors">
+                <span class="program-award">Bachelors Degree</span>
+                <h3 class="program-title">Public Health (BSc)</h3>
+                <div class="program-school"><i class="fa-solid fa-heart-pulse"></i> School of Health Science</div>
+                <div class="program-meta">
+                   <div class="meta-item"><i class="fa-regular fa-clock"></i> 4 Years</div>
+                   <div class="meta-item"><i class="fa-solid fa-location-dot"></i> On-Campus</div>
+                </div>
+                <a href="#" class="program-link">View Program Details <i class="fa-solid fa-arrow-right"></i></a>
+             </div>
+             
+             <!-- Certificate Examples -->
+             <div class="program-card cert-card" data-category="certificate">
+                <span class="program-award">Certificate</span>
+                <h3 class="program-title">Cybersecurity Fundamentals</h3>
+                <div class="program-school"><i class="fa-solid fa-laptop-code"></i> School of Information Technology</div>
+                <div class="program-meta">
+                   <div class="meta-item"><i class="fa-regular fa-clock"></i> 6 Months</div>
+                   <div class="meta-item"><i class="fa-solid fa-location-dot"></i> Hybrid</div>
+                </div>
+                <a href="#" class="program-link">View Program Details <i class="fa-solid fa-arrow-right"></i></a>
+             </div>
+
+             <div class="program-card cert-card" data-category="certificate">
+                <span class="program-award">Certificate</span>
+                <h3 class="program-title">Educational Leadership</h3>
+                <div class="program-school"><i class="fa-solid fa-book-open"></i> School of Education</div>
+                <div class="program-meta">
+                   <div class="meta-item"><i class="fa-regular fa-clock"></i> 1 Year</div>
+                   <div class="meta-item"><i class="fa-solid fa-location-dot"></i> Online</div>
+                </div>
+                <a href="#" class="program-link">View Program Details <i class="fa-solid fa-arrow-right"></i></a>
+             </div>
+
+          </div>
+       </div>
+    </section>
+    
+    <!-- Info Banner -->
+    <section class="info-banner">
+       <div class="container">
+          <h2>Ready to Take the Next Step?</h2>
+          <p style="font-size: 18px; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">Review our admission requirements and begin your application process to join Best Brain International University.</p>
+          <a href="admissions-overview.html" class="btn-outline-dark">Apply Now</a>
+       </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <div class="footer-top pt-80 pb-60">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-widget widget-about">
+                        <a href="index.html" class="footer-brand mb-30" style="text-decoration: none;">
+                        <img src="assets/logo.png" alt="Footer Logo" class="footer-logo-img">
+                        <div class="footer-logo-text">
+                            <span class="footer-logo-title">Best Brain</span>
+                            <span class="footer-logo-subtitle">International University</span>
+                        </div>
+                    </a>
+                        <p>Best Brain International University is a premier institution dedicated to excellence in teaching, learning, and research, developing leaders who make a difference globally.</p>
+                        <div class="social-links mt-30">
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-widget widget-links">
+                        <h4 class="widget-title">Quick Links</h4>
+                        <ul>
+                            <li><a href="about-overview.html">About University</a></li>
+                            <li><a href="academics-overview.html">Academic Programs</a></li>
+                            <li><a href="admissions-overview.html">Admissions Info</a></li>
+                            <li><a href="student-life.html">Student Life</a></li>
+                            <li><a href="#">University Events</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-widget widget-links">
+                        <h4 class="widget-title">Resources</h4>
+                        <ul>
+                            <li><a href="#">Student Portal</a></li>
+                            <li><a href="#">Library Catalogs</a></li>
+                            <li><a href="#">Alumni Network</a></li>
+                            <li><a href="#">Career Services</a></li>
+                            <li><a href="#">Campus Map</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-widget widget-contact">
+                        <h4 class="widget-title">Contact Us</h4>
+                        <ul class="contact-info">
+                            <li><i class="fa-solid fa-location-dot"></i> Guest House Road, Thinker’s Village, RIA Road, Paynesville, Liberia</li>
+                            <li><i class="fa-solid fa-phone"></i> +231-770-370-894 / +231-881-324-323</li>
+                            <li><i class="fa-solid fa-envelope"></i> info@bbiu.org.lr</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-inner">
+                    <p class="copyright">&copy; 2026 Best Brain International University/ Developed by Leda . All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Use</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+      // Programs Filtering Script
+      document.addEventListener('DOMContentLoaded', () => {
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const programCards = document.querySelectorAll('.program-card');
+
+        filterBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+             // Remove active class from all
+             filterBtns.forEach(b => b.classList.remove('active'));
+             // Add active to clicked
+             btn.classList.add('active');
+
+             const filterVal = btn.getAttribute('data-filter');
+
+             programCards.forEach(card => {
+                if(filterVal === 'all') {
+                   card.style.display = 'block';
+                } else if(card.getAttribute('data-category') === filterVal) {
+                   card.style.display = 'block';
+                } else {
+                   card.style.display = 'none';
+                }
+             });
+          });
+        });
+      });
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Life - Best Brain International University</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .student-life-section {
+        padding: 100px 0;
+      }
+      .feature-card {
+        background: white;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 100%;
+        text-align: center;
+      }
+      .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(190, 46, 214, 0.1);
+      }
+      .feature-card i {
+        font-size: 40px;
+        color: #be2ed6;
+        margin-bottom: 25px;
+        display: block;
+      }
+      .feature-card h3 {
+        font-family: 'Playfair Display', serif;
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 20px;
+      }
+      .feature-card p {
+        color: #666;
+        line-height: 1.7;
+        font-size: 15px;
+      }
+
+      .culture-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+        margin-bottom: 80px;
+      }
+      .culture-text h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 42px;
+        color: #be2ed6;
+        margin-bottom: 25px;
+      }
+      .culture-text p {
+        color: #555;
+        font-size: 16px;
+        line-height: 1.8;
+        margin-bottom: 20px;
+      }
+
+      .housing-banner {
+        background: #f4f7fa;
+        padding: 80px;
+        border-radius: 20px;
+        margin-top: 50px;
+        display: flex;
+        align-items: center;
+        gap: 50px;
+      }
+      .housing-content h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 36px;
+        color: #be2ed6;
+        margin-bottom: 20px;
+      }
+
+      @media (max-width: 991px) {
+        .culture-grid, .housing-banner {
+          grid-template-columns: 1fr;
+          flex-direction: column;
+          text-align: center;
+          padding: 40px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <div class="container top-bar-container">
+        <div class="top-bar-left">
+          <a href="mailto:info@bbiu.org.lr" class="contact-item"
+            ><i class="fa-regular fa-envelope"></i> info@bbiu.org.lr</a
+          >
+          <span class="contact-item"
+            ><i class="fa-solid fa-phone"></i> +231-770-370-894 / +231-881-324-323</span
+          >
+        </div>
+        <div class="top-bar-right">
+          <a href="#">Alumni</a>
+          <a href="#">Calendar</a>
+          <a href="#">Portal</a>
+          <a href="#" class="btn-support">Support BBU</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header class="main-header">
+      <div class="container header-container">
+        <div class="logo">
+          <img
+            src="assets/logo.png"
+            alt="Best Brain International University Logo"
+            class="logo-img"
+          />
+          <div class="logo-text">
+            <span class="logo-title">Best Brain</span>
+            <span class="logo-subtitle">International University</span>
+          </div>
+        </div>
+
+        <nav class="main-nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li class="has-mega-menu">
+              <a href="#">About Us <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 5px;"></i></a>
+              <div class="mega-menu">
+                <div class="mega-menu-content">
+                  <ul class="mega-menu-list">
+                    <li><a href="about-overview.html"><i class="fa-solid fa-angle-right"></i> Overview</a></li>
+                    <li><a href="history.html"><i class="fa-solid fa-angle-right"></i> History</a></li>
+                    <li><a href="mission-vision.html"><i class="fa-solid fa-angle-right"></i> Mission & Vision</a></li>
+                    <li><a href="leadership.html"><i class="fa-solid fa-angle-right"></i> Leadership & Directorates</a></li>
+                    <li><a href="affiliates.html"><i class="fa-solid fa-angle-right"></i> Affiliates & Partners</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="has-mega-menu">
+              <a href="#">Academics <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 5px;"></i></a>
+              <div class="mega-menu">
+                <div class="mega-menu-content">
+                  <ul class="mega-menu-list">
+                    <li><a href="academics-overview.html"><i class="fa-solid fa-angle-right"></i> Overview</a></li>
+                    <li><a href="colleges.html"><i class="fa-solid fa-angle-right"></i> Colleges & Schools</a></li>
+                    <li><a href="programs.html"><i class="fa-solid fa-angle-right"></i> Programs</a></li>
+                    <li><a href="calendar.html"><i class="fa-solid fa-angle-right"></i> Academic Calendar</a></li>
+                    <li><a href="library.html"><i class="fa-solid fa-angle-right"></i> Library</a></li>
+                    <li><a href="journals.html"><i class="fa-solid fa-angle-right"></i> BBIU Journals</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="has-mega-menu">
+              <a href="#">Admissions <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 5px;"></i></a>
+              <div class="mega-menu">
+                <div class="mega-menu-content">
+                  <ul class="mega-menu-list">
+                    <li><a href="admissions-overview.html"><i class="fa-solid fa-angle-right"></i> Overview</a></li>
+                    <li><a href="undergraduate-admissions.html"><i class="fa-solid fa-angle-right"></i> Undergraduate</a></li>
+                    <li><a href="transfer-admissions.html"><i class="fa-solid fa-angle-right"></i> Transfer Students</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li><a href="student-life.html" class="active">Student Life</a></li>
+            <li class="search-icon">
+              <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Page Banner -->
+    <div class="page-banner" style="background-image: url('assets/student_life_hero_1772618802556.png'); position: relative; padding: 160px 0; text-align: center; color: white; background-size: cover; background-position: center;">
+      <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(53, 6, 62, 0.75);"></div>
+      <div class="container" style="position: relative; z-index: 1;">
+        <h1 style="font-family: 'Playfair Display', serif; font-size: 64px; margin-bottom: 20px;">Student Life</h1>
+        <p style="font-size: 20px; max-width: 800px; margin: 0 auto 30px; opacity: 0.9;">Discover a world beyond the classroom. At BBIU, student life is about community, growth, and making memories that last a lifetime.</p>
+        <div style="font-size: 18px; font-weight: 500;">
+          <a href="index.html" style="color: #f7a800; text-decoration: none;">Home</a> 
+          <span style="margin: 0 12px;"><i class="fa-solid fa-angle-right"></i></span> 
+          <span>Student Life</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Campus Culture Section -->
+    <section class="student-life-section">
+      <div class="container">
+        <div class="culture-grid">
+           <div class="culture-text">
+              <h5 style="color: #f7a800; font-weight: 700; text-transform: uppercase; margin-bottom: 10px;">Our Vibrant Community</h5>
+              <h2>Life at BBIU</h2>
+              <p>Best Brain International University is more than just an institution of higher learning—it's a home for thinkers, dreamers, and doers. Our campus is a melting pot of cultures, ideas, and passions, where every student has the opportunity to shine.</p>
+              <p>From the lively discussions in the student lounge to the high-energy events in the great hall, there's always something happening at BBIU. We encourage our students to explore their interests, challenge themselves, and build strong connections with their peers.</p>
+              <a href="#" class="btn-primary" style="margin-top: 15px;">Explore Campus Map</a>
+           </div>
+           <div style="position: relative; border-radius: 15px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+              <img src="assets/589938766_122107002495107867_5248692271218728699_n.jpg" alt="Student Collaboration" style="width: 100%; display: block;">
+           </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
+           <div class="feature-card">
+              <i class="fa-solid fa-users-viewfinder"></i>
+              <h3>Student Clubs</h3>
+              <p>Join over 30 student-led organizations, ranging from debate and technology to arts and community service.</p>
+           </div>
+           <div class="feature-card">
+              <i class="fa-solid fa-mask-fancy"></i>
+              <h3>Cultural Festivals</h3>
+              <p>Experience the diversity of our student body through annual cultural nights and international food fairs.</p>
+           </div>
+           <div class="feature-card">
+              <i class="fa-solid fa-trophy"></i>
+              <h3>Leadership Programs</h3>
+              <p>Develop essential skills through our Student Government Association and leadership workshops.</p>
+           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Housing Section -->
+    <section class="student-life-section pt-0">
+      <div class="container">
+         <div class="housing-banner">
+            <div style="flex: 1; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
+               <img src="assets/486315870_1073522748125162_6999492349873762032_n.jpg" alt="Campus Housing" style="width: 100%; display: block;">
+            </div>
+            <div class="housing-content" style="flex: 1;">
+               <h5 style="color: #f7a800; font-weight: 700; text-transform: uppercase;">Residential Life</h5>
+               <h2>Housing at BBIU</h2>
+               <p>Living on campus is an essential part of the BBIU experience. Our modern residential halls offer more than just a place to sleep; they are communities where students live and learn together.</p>
+               <ul style="list-style: none; padding: 0; margin-bottom: 25px;">
+                  <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 10px;"><i class="fa-solid fa-circle-check" style="color: #be2ed6;"></i> 24/7 Security & Support Staff</li>
+                  <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 10px;"><i class="fa-solid fa-circle-check" style="color: #be2ed6;"></i> High-speed Campus Wi-Fi</li>
+                  <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 10px;"><i class="fa-solid fa-circle-check" style="color: #be2ed6;"></i> Shared Common Rooms & Study Areas</li>
+               </ul>
+               <a href="#" class="btn-primary">Learn About Housing</a>
+            </div>
+         </div>
+      </div>
+    </section>
+
+    <!-- Support Services -->
+    <section class="student-life-section" style="background: #be2ed6; color: white;">
+       <div class="container text-center">
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 42px; margin-bottom: 15px;">Student Support & Well-being</h2>
+          <p style="font-size: 18px; max-width: 800px; margin: 0 auto 50px; opacity: 0.9;">We are committed to the success and health of our students. BBIU provides a range of services to ensure you have the support you need at every step.</p>
+          
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; text-align: left;">
+             <div>
+                <h4 style="font-size: 22px; margin-bottom: 15px;"><i class="fa-solid fa-heart-pulse"></i> Health Center</h4>
+                <p style="opacity: 0.8; font-size: 15px;">On-campus healthcare facilities providing basic medical care and wellness consultations.</p>
+             </div>
+             <div>
+                <h4 style="font-size: 22px; margin-bottom: 15px;"><i class="fa-solid fa-brain"></i> Counseling Services</h4>
+                <p style="opacity: 0.8; font-size: 15px;">Professional guidance and support for mental health, academic stress, and personal growth.</p>
+             </div>
+             <div>
+                <h4 style="font-size: 22px; margin-bottom: 15px;"><i class="fa-solid fa-briefcase"></i> Career Center</h4>
+                <p style="opacity: 0.8; font-size: 15px;">Helping students prepare for life after graduation with career counseling, resumes, and workshops.</p>
+             </div>
+          </div>
+       </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="padding: 100px 0; text-align: center;">
+       <div class="container">
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 42px; color: #be2ed6; margin-bottom: 30px;">Become Part of the BBIU Family</h2>
+          <p style="font-size: 18px; max-width: 700px; margin: 0 auto 40px; color: #666;">Ready to start your journey? Apply today and experience everything Best Brain International University has to offer.</p>
+          <a href="admissions-overview.html" class="btn-primary" style="padding: 18px 45px; font-size: 18px;">Start Your Application</a>
+       </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <div class="footer-top pt-80 pb-60">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-widget widget-about">
+                        <a href="index.html" class="footer-brand mb-30" style="text-decoration: none;">
+                            <img src="assets/logo.png" alt="Footer Logo" class="footer-logo-img">
+                            <div class="footer-logo-text">
+                                <span class="footer-logo-title">Best Brain</span>
+                                <span class="footer-logo-subtitle">International University</span>
+                            </div>
+                        </a>
+                        <p>Best Brain International University is a premier institution dedicated to excellence in teaching, learning, and research, developing leaders who make a difference globally.</p>
+                        <div class="social-links mt-30">
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-widget widget-links">
+                        <h4 class="widget-title">Quick Links</h4>
+                        <ul>
+                            <li><a href="about-overview.html">About University</a></li>
+                            <li><a href="programs.html">Academic Programs</a></li>
+                            <li><a href="admissions-overview.html">Admissions Info</a></li>
+                            <li><a href="student-life.html">Student Life</a></li>
+                            <li><a href="#">University Events</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-widget widget-links">
+                        <h4 class="widget-title">Resources</h4>
+                        <ul>
+                            <li><a href="#">Student Portal</a></li>
+                            <li><a href="#">Library Catalogs</a></li>
+                            <li><a href="#">Alumni Network</a></li>
+                            <li><a href="#">Career Services</a></li>
+                            <li><a href="#">Campus Map</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-widget widget-contact">
+                        <h4 class="widget-title">Contact Us</h4>
+                        <ul class="contact-info">
+                            <li><i class="fa-solid fa-location-dot"></i> Guest House Road, Thinker’s Village, RIA Road, Paynesville, Liberia</li>
+                            <li><i class="fa-solid fa-phone"></i> +231-770-370-894 / +231-881-324-323</li>
+                            <li><i class="fa-solid fa-envelope"></i> info@bbiu.org.lr</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-inner">
+                    <p class="copyright">&copy; 2026 Best Brain International University/ Developed by Leda Group Inc. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Use</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

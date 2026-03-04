@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leadership & Directorates - Best Brain International University</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .leader-card {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-align: center;
+      }
+      .leader-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+      }
+      .leader-img-wrapper {
+        height: 280px;
+        overflow: hidden;
+        position: relative;
+        background: #f4f7fa;
+      }
+      .leader-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+      .leader-card:hover .leader-img {
+        transform: scale(1.05);
+      }
+      .leader-info {
+        padding: 25px 20px;
+      }
+      .leader-name {
+        font-family: 'Playfair Display', serif;
+        color: #be2ed6;
+        font-size: 22px;
+        margin-bottom: 5px;
+      }
+      .leader-title {
+        color: #f7a800;
+        font-weight: 600;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+        display: block;
+      }
+      .leader-bio {
+        color: #666;
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+      .leader-social {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+      }
+      .leader-social a {
+        color: #be2ed6;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: #f4f7fa;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+      }
+      .leader-social a:hover {
+        background: #f7a800;
+        color: white;
+      }
+      .directorate-box {
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        border-left: 4px solid #be2ed6;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        margin-bottom: 30px;
+        transition: all 0.3s ease;
+      }
+      .directorate-box:hover {
+        border-left-color: #f7a800;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      }
+      .dir-icon {
+        width: 50px;
+        height: 50px;
+        background: rgba(247, 168, 0, 0.1);
+        color: #f7a800;
+        font-size: 24px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+      .dir-title {
+        font-family: 'Playfair Display', serif;
+        color: #be2ed6;
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+      .dir-desc {
+        color: #666;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <div class="container top-bar-container">
+        <div class="top-bar-left">
+          <a href="mailto:info@bbiu.org.lr" class="contact-item"
+            ><i class="fa-regular fa-envelope"></i> info@bbiu.org.lr</a
+          >
+          <span class="contact-item"
+            ><i class="fa-solid fa-phone"></i> +231-770-370-894 / +231-881-324-323</span
+          >
+        </div>
+        <div class="top-bar-right">
+          <a href="#">Alumni</a>
+          <a href="#">Calendar</a>
+          <a href="#">Portal</a>
+          <a href="#" class="btn-support">Support BBU</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header class="main-header">
+      <div class="container header-container">
+        <div class="logo">
+          <img
+            src="assets/logo.png"
+            alt="Best Brain International University Logo"
+            class="logo-img"
+          />
+          <div class="logo-text">
+            <span class="logo-title">Best Brain</span>
+            <span class="logo-subtitle">International University</span>
+          </div>
+        </div>
+
+        <nav class="main-nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li class="has-mega-menu">
+              <a href="#" class="active">About Us <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 5px;"></i></a>
+              <div class="mega-menu">
+                <div class="mega-menu-content">
+                  <ul class="mega-menu-list">
+                    <li><a href="about-overview.html"><i class="fa-solid fa-angle-right"></i> Overview</a></li>
+                    <li><a href="history.html"><i class="fa-solid fa-angle-right"></i> History</a></li>
+                    <li><a href="mission-vision.html"><i class="fa-solid fa-angle-right"></i> Mission & Vision</a></li>
+                    <li><a href="leadership.html"><i class="fa-solid fa-angle-right"></i> Leadership & Directorates</a></li>
+                    <li><a href="affiliates.html"><i class="fa-solid fa-angle-right"></i> Affiliates & Partners</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="has-mega-menu">
+              <a href="#">Academics <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 5px;"></i></a>
+              <div class="mega-menu">
+                <div class="mega-menu-content">
+                  <ul class="mega-menu-list">
+                    <li><a href="academics-overview.html"><i class="fa-solid fa-angle-right"></i> Overview</a></li>
+                    <li><a href="colleges.html"><i class="fa-solid fa-angle-right"></i> Colleges & Schools</a></li>
+                    <li><a href="programs.html"><i class="fa-solid fa-angle-right"></i> Programs</a></li>
+                    <li><a href="calendar.html"><i class="fa-solid fa-angle-right"></i> Academic Calendar</a></li>
+                    <li><a href="library.html"><i class="fa-solid fa-angle-right"></i> Library</a></li>
+                    <li><a href="journals.html"><i class="fa-solid fa-angle-right"></i> BBIU Journals</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="has-mega-menu">
+              <a href="#">Admissions <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 5px;"></i></a>
+              <div class="mega-menu">
+                <div class="mega-menu-content">
+                  <ul class="mega-menu-list">
+                    <li><a href="admissions-overview.html"><i class="fa-solid fa-angle-right"></i> Overview</a></li>
+                    <li><a href="undergraduate-admissions.html"><i class="fa-solid fa-angle-right"></i> Undergraduate</a></li>
+                    <li><a href="transfer-admissions.html"><i class="fa-solid fa-angle-right"></i> Transfer Students</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+
+<li><a href="student-life.html">Student Life</a></li>
+            <li class="search-icon">
+              <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Page Banner -->
+    <div class="page-banner" style="background-image: url('assets/hero_slide_2.png'); position: relative; padding: 120px 0; text-align: center; color: white; background-size: cover; background-position: center;">
+      <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(190, 46, 214, 0.85);"></div>
+      <div class="container" style="position: relative; z-index: 1;">
+        <h1 style="font-family: 'Playfair Display', serif; font-size: 48px; margin-bottom: 15px;">Leadership & Directorates</h1>
+        <div style="font-size: 16px;">
+          <a href="index.html" style="color: #f7a800; text-decoration: none;">Home</a> 
+          <span style="margin: 0 10px;"><i class="fa-solid fa-angle-right"></i></span> 
+          <span>About Us</span>
+          <span style="margin: 0 10px;"><i class="fa-solid fa-angle-right"></i></span> 
+          <span>Leadership</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Executive Leadership Section -->
+    <section class="leadership-section pt-100 pb-100" style="padding: 80px 0;">
+      <div class="container">
+        <div class="section-header text-center mb-50" style="margin-bottom: 60px;">
+          <h5 class="section-subtitle" style="color: #f7a800; font-weight: 600; text-transform: uppercase;">Guiding BBIU</h5>
+          <h2 class="section-title" style="font-family: 'Playfair Display', serif; font-size: 36px; color: #be2ed6;">Executive Leadership</h2>
+          <div style="width: 60px; height: 3px; background: #f7a800; margin: 15px auto 0;"></div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+          
+          <!-- Leader 1 -->
+          <div class="leader-card">
+            <div class="leader-img-wrapper">
+              <img src="assets/leader_president.png" alt="Hon. Dr. Christopher W. Peters" class="leader-img">
+            </div>
+            <div class="leader-info">
+              <h3 class="leader-name">Hon. Dr. Christopher W. Peters</h3>
+              <span class="leader-title">Founder & President</span>
+              <p class="leader-bio">Leading Best Brains International University with a vision for academic excellence, innovation, and global competitiveness.</p>
+              <div class="leader-social">
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#"><i class="fa-solid fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Leader 2 -->
+          <div class="leader-card">
+            <div class="leader-img-wrapper">
+              <img src="assets/leader_provost.png" alt="Prof. Abigail S. Johnson" class="leader-img">
+            </div>
+            <div class="leader-info">
+              <h3 class="leader-name">Prof. Abigail S. Johnson</h3>
+              <span class="leader-title">Vice President of Academic Affairs</span>
+              <p class="leader-bio">Overseeing the academic programs, faculty development, and ensuring the highest standards of teaching and learning across all disciplines.</p>
+              <div class="leader-social">
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#"><i class="fa-solid fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Leader 3 -->
+          <div class="leader-card">
+            <div class="leader-img-wrapper">
+              <img src="assets/leader_admin.png" alt="Mr. Marcus T. Velez" class="leader-img">
+            </div>
+            <div class="leader-info">
+              <h3 class="leader-name">Mr. Marcus T. Velez</h3>
+              <span class="leader-title">VP of Administration</span>
+              <p class="leader-bio">Managing university operations, infrastructure, and ensuring a conducive environment for both students and staff.</p>
+              <div class="leader-social">
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#"><i class="fa-solid fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- University Directorates -->
+    <section class="directorates-section bg-light pt-100 pb-100" style="background-color: #f4f7fa; padding: 80px 0;">
+      <div class="container">
+        <div class="section-header text-center mb-50" style="margin-bottom: 60px;">
+          <h5 class="section-subtitle" style="color: #f7a800; font-weight: 600; text-transform: uppercase;">Administrative Pillars</h5>
+          <h2 class="section-title" style="font-family: 'Playfair Display', serif; font-size: 36px; color: #be2ed6;">University Directorates</h2>
+          <p style="color: #555; max-width: 700px; margin: 15px auto 0;">The various directorates at BBIU work collaboratively to support the academic mission, manage university operations, and provide essential services to the campus community.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;">
+          
+          <div class="directorate-box">
+            <div class="dir-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <h4 class="dir-title">Directorate of Academic Affairs</h4>
+            <p class="dir-desc">Responsible for curriculum development, academic policies, quality assurance, and coordinating the activities of all academic departments and faculties.</p>
+          </div>
+
+          <div class="directorate-box">
+            <div class="dir-icon"><i class="fa-solid fa-users"></i></div>
+            <h4 class="dir-title">Directorate of Student Affairs</h4>
+            <p class="dir-desc">Dedicated to enhancing the student experience through counseling, career services, extracurricular activities, and maintaining student welfare.</p>
+          </div>
+
+          <div class="directorate-box">
+            <div class="dir-icon"><i class="fa-solid fa-building-columns"></i></div>
+            <h4 class="dir-title">Directorate of Administration & Finance</h4>
+            <p class="dir-desc">Oversees human resources, financial planning, budgeting, procurement, and the general administrative operations of the university.</p>
+          </div>
+
+          <div class="directorate-box">
+            <div class="dir-icon"><i class="fa-solid fa-globe"></i></div>
+            <h4 class="dir-title">Directorate of International Programs</h4>
+            <p class="dir-desc">Facilitates global partnerships, manages international student admissions, and coordinates study abroad programs and international research collaborations.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <div class="footer-top pt-80 pb-60">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-widget widget-about">
+                        <a href="index.html" class="footer-brand mb-30" style="text-decoration: none;">
+                        <img src="assets/logo.png" alt="Footer Logo" class="footer-logo-img">
+                        <div class="footer-logo-text">
+                            <span class="footer-logo-title">Best Brain</span>
+                            <span class="footer-logo-subtitle">International University</span>
+                        </div>
+                    </a>
+                        <p>Best Brain International University is a premier institution dedicated to excellence in teaching, learning, and research, developing leaders who make a difference globally.</p>
+                        <div class="social-links mt-30">
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-widget widget-links">
+                        <h4 class="widget-title">Quick Links</h4>
+                        <ul>
+                            <li><a href="about-overview.html">About University</a></li>
+                            <li><a href="programs.html">Academic Programs</a></li>
+                            <li><a href="admissions-overview.html">Admissions Info</a></li>
+                            <li><a href="student-life.html">Student Life</a></li>
+                            <li><a href="#">University Events</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-widget widget-links">
+                        <h4 class="widget-title">Resources</h4>
+                        <ul>
+                            <li><a href="#">Student Portal</a></li>
+                            <li><a href="#">Library Catalogs</a></li>
+                            <li><a href="#">Alumni Network</a></li>
+                            <li><a href="#">Career Services</a></li>
+                            <li><a href="#">Campus Map</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-widget widget-contact">
+                        <h4 class="widget-title">Contact Us</h4>
+                        <ul class="contact-info">
+                            <li><i class="fa-solid fa-location-dot"></i> Guest House Road, Thinker’s Village, RIA Road, Paynesville, Liberia</li>
+                            <li><i class="fa-solid fa-phone"></i> +231-770-370-894 / +231-881-324-323</li>
+                            <li><i class="fa-solid fa-envelope"></i> info@bbiu.org.lr</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-inner">
+                    <p class="copyright">&copy; 2026 Best Brain International University/ Developed by Leda . All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Use</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

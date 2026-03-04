@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Undergraduate Admissions - Best Brain International University</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .undergrad-admissions-section {
+        padding: 100px 0;
+      }
+      .requirement-card {
+        background: white;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        border-top: 5px solid #be2ed6;
+        height: 100%;
+      }
+      .requirement-card h3 {
+        font-family: 'Playfair Display', serif;
+        color: #be2ed6;
+        font-size: 24px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .requirement-card h3 i {
+        color: #f7a800;
+        font-size: 20px;
+      }
+      .requirement-list {
+        list-style: none;
+        padding: 0;
+      }
+      .requirement-list li {
+        margin-bottom: 15px;
+        color: #555;
+        line-height: 1.6;
+        display: flex;
+        gap: 12px;
+      }
+      .requirement-list li i {
+        color: #be2ed6;
+        margin-top: 4px;
+      }
+
+      .deadline-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        margin-top: 50px;
+      }
+      .deadline-box {
+        background: white;
+        padding: 50px;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+        position: relative;
+        overflow: hidden;
+      }
+      .deadline-box::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 8px;
+        background: #f7a800;
+      }
+      .semester-name {
+        font-family: 'Playfair Display', serif;
+        font-size: 32px;
+        color: #be2ed6;
+        margin-bottom: 15px;
+      }
+      .date-item {
+        margin-bottom: 20px;
+      }
+      .date-label {
+        color: #f7a800;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 14px;
+        letter-spacing: 1px;
+        display: block;
+        margin-bottom: 5px;
+      }
+      .date-value {
+        font-size: 20px;
+        color: #333;
+        font-weight: 600;
+      }
+
+      /* FAQ Styling */
+      .faq-section {
+        background-color: #f4f7fa;
+        padding: 100px 0;
+      }
+      .faq-item {
+        background: white;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+        overflow: hidden;
+      }
+      .faq-question {
+        padding: 25px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        font-weight: 600;
+        color: #333;
+        font-size: 18px;
+        transition: background 0.3s ease;
+      }
+      .faq-question:hover {
+        background: rgba(190, 46, 214, 0.02);
+      }
+      .faq-answer {
+        padding: 0 30px 25px;
+        color: #666;
+        line-height: 1.8;
+      }
+
+      @media (max-width: 767px) {
+        .deadline-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <div class="container top-bar-container">
+        <div class="top-bar-left">
+          <a href="mailto:info@bbiu.org.lr" class="contact-item"
+            ><i class="fa-regular fa-envelope"></i> info@bbiu.org.lr</a
+          >
+          <span class="contact-item"
+            ><i class="fa-solid fa-phone"></i> +231-770-370-894 / +231-881-324-323</span
+          >
+        </div>
+        <div class="top-bar-right">
+          <a href="#">Alumni</a>
+          <a href="#">Calendar</a>
+          <a href="#">Portal</a>
+          <a href="#" class="btn-support">Support BBU</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header class="main-header">
+      <div class="container header-container">
+        <div class="logo">
+          <img
+            src="assets/logo.png"
+            alt="Best Brain International University Logo"
+            class="logo-img"
+          />
+          <div class="logo-text">
+            <span class="logo-title">Best Brain</span>
+            <span class="logo-subtitle">International University</span>
+          </div>
+        </div>
+
+        <nav class="main-nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li class="has-mega-menu">
+              <a href="#">About Us <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 5px;"></i></a>
+              <div class="mega-menu">
+                <div class="mega-menu-content">
+                  <ul class="mega-menu-list">
+                    <li><a href="about-overview.html"><i class="fa-solid fa-angle-right"></i> Overview</a></li>
+                    <li><a href="history.html"><i class="fa-solid fa-angle-right"></i> History</a></li>
+                    <li><a href="mission-vision.html"><i class="fa-solid fa-angle-right"></i> Mission & Vision</a></li>
+                    <li><a href="leadership.html"><i class="fa-solid fa-angle-right"></i> Leadership & Directorates</a></li>
+                    <li><a href="affiliates.html"><i class="fa-solid fa-angle-right"></i> Affiliates & Partners</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="has-mega-menu">
+              <a href="#">Academics <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 5px;"></i></a>
+              <div class="mega-menu">
+                <div class="mega-menu-content">
+                  <ul class="mega-menu-list">
+                    <li><a href="academics-overview.html"><i class="fa-solid fa-angle-right"></i> Overview</a></li>
+                    <li><a href="colleges.html"><i class="fa-solid fa-angle-right"></i> Colleges & Schools</a></li>
+                    <li><a href="programs.html"><i class="fa-solid fa-angle-right"></i> Programs</a></li>
+                    <li><a href="calendar.html"><i class="fa-solid fa-angle-right"></i> Academic Calendar</a></li>
+                    <li><a href="library.html"><i class="fa-solid fa-angle-right"></i> Library</a></li>
+                    <li><a href="journals.html"><i class="fa-solid fa-angle-right"></i> BBIU Journals</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="has-mega-menu">
+              <a href="#" class="active">Admissions <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 5px;"></i></a>
+              <div class="mega-menu">
+                <div class="mega-menu-content">
+                  <ul class="mega-menu-list">
+                    <li><a href="admissions-overview.html"><i class="fa-solid fa-angle-right"></i> Overview</a></li>
+                    <li><a href="undergraduate-admissions.html"><i class="fa-solid fa-angle-right"></i> Undergraduate</a></li>
+                    <li><a href="transfer-admissions.html"><i class="fa-solid fa-angle-right"></i> Transfer Students</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+
+<li><a href="student-life.html">Student Life</a></li>
+            <li class="search-icon">
+              <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Page Banner -->
+    <div class="page-banner" style="background-image: url('assets/undergrad_admissions_hero_1772616557863.png'); position: relative; padding: 140px 0; text-align: center; color: white; background-size: cover; background-position: center;">
+      <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(190, 46, 214, 0.85);"></div>
+      <div class="container" style="position: relative; z-index: 1;">
+        <h1 style="font-family: 'Playfair Display', serif; font-size: 56px; margin-bottom: 20px;">Undergraduate Admissions</h1>
+        <div style="font-size: 18px; font-weight: 500;">
+          <a href="index.html" style="color: #f7a800; text-decoration: none;">Home</a> 
+          <span style="margin: 0 12px;"><i class="fa-solid fa-angle-right"></i></span> 
+          <a href="admissions-overview.html" style="color: white; text-decoration: none;">Admissions</a>
+          <span style="margin: 0 12px;"><i class="fa-solid fa-angle-right"></i></span> 
+          <span>Undergraduate</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Requirements Section -->
+    <section class="undergrad-admissions-section">
+      <div class="container">
+        <div class="section-header text-center mb-60">
+          <h2 class="section-title" style="font-family: 'Playfair Display', serif; font-size: 42px; color: #be2ed6; margin-bottom: 15px;">Admission Requirements</h2>
+          <p style="color: #666; max-width: 700px; margin: 0 auto;">We select students based on their academic potential, personal character, and readiness to thrive in our rigorous academic environment.</p>
+          <div style="width: 80px; height: 4px; background: #f7a800; margin: 25px auto 0;"></div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+          <!-- Card 1 -->
+          <div class="requirement-card">
+            <h3><i class="fa-solid fa-graduation-cap"></i> Academic Criteria</h3>
+            <ul class="requirement-list">
+              <li><i class="fa-solid fa-check"></i> High School Diploma or equivalent.</li>
+              <li><i class="fa-solid fa-check"></i> Minimum aggregate score in WAEC/WASSCE (WASSCE Preferred).</li>
+              <li><i class="fa-solid fa-check"></i> Proficiency in English (Both written and oral).</li>
+              <li><i class="fa-solid fa-check"></i> Satisfactory results in BBIU Entrance Examination.</li>
+            </ul>
+          </div>
+          <!-- Card 2 -->
+          <div class="requirement-card" style="border-top-color: #f7a800;">
+            <h3><i class="fa-solid fa-file-invoice"></i> Required Documents</h3>
+            <ul class="requirement-list">
+              <li><i class="fa-solid fa-check"></i> Official high school transcripts (original copies).</li>
+              <li><i class="fa-solid fa-check"></i> Valid national ID or Passport.</li>
+              <li><i class="fa-solid fa-check"></i> Two letters of recommendation from former teachers.</li>
+              <li><i class="fa-solid fa-check"></i> Four recent passport-sized photographs.</li>
+            </ul>
+          </div>
+          <!-- Card 3 -->
+          <div class="requirement-card">
+            <h3><i class="fa-solid fa-star"></i> Personal Statement</h3>
+            <p style="color: #555; line-height: 1.7; margin-bottom: 15px;">Prospects are required to submit a 500-word essay detailing:</p>
+            <ul class="requirement-list">
+              <li><i class="fa-solid fa-check"></i> Why you chose Best Brain International University.</li>
+              <li><i class="fa-solid fa-check"></i> Your career aspirations and academic goals.</li>
+              <li><i class="fa-solid fa-check"></i> How you plan to contribute to our campus community.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deadlines Section -->
+    <section class="undergrad-admissions-section pt-0">
+      <div class="container">
+        <div class="section-header text-center mb-40">
+           <h2 class="section-title" style="font-family: 'Playfair Display', serif; font-size: 36px; color: #be2ed6;">Important Dates</h2>
+        </div>
+
+        <div class="deadline-grid">
+           <div class="deadline-box">
+              <h3 class="semester-name">Fall Semester</h3>
+              <div class="date-item">
+                 <span class="date-label">Early Application</span>
+                 <span class="date-value">April 30, 2026</span>
+              </div>
+              <div class="date-item">
+                 <span class="date-label">Final Deadline</span>
+                 <span class="date-value">August 15, 2026</span>
+              </div>
+              <div class="date-item">
+                 <span class="date-label">Orientation Begins</span>
+                 <span class="date-value">August 28, 2026</span>
+              </div>
+           </div>
+
+           <div class="deadline-box" style="border-top-color: #be2ed6;">
+              <h3 class="semester-name">Spring Semester</h3>
+              <div class="date-item">
+                 <span class="date-label">Early Application</span>
+                 <span class="date-value">November 15, 2025</span>
+              </div>
+              <div class="date-item">
+                 <span class="date-label">Final Deadline</span>
+                 <span class="date-value">January 10, 2026</span>
+              </div>
+              <div class="date-item">
+                 <span class="date-label">Orientation Begins</span>
+                 <span class="date-value">January 15, 2026</span>
+              </div>
+           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Financial Aid Section -->
+    <section class="undergrad-admissions-section bg-primary" style="background: #be2ed6; color: white;">
+       <div class="container text-center">
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 42px; margin-bottom: 25px;">Financial Aid & Scholarships</h2>
+          <p style="font-size: 18px; max-width: 800px; margin: 0 auto 40px; opacity: 0.9;">
+             At BBIU, we believe that financial constraints should never stand in the way of excellence. We offer a variety of merit-based and need-based scholarships to help deserving students achieve their academic dreams.
+          </p>
+          <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+             <a href="#" class="btn-primary" style="background: #f7a800; color: white;">Scholarship Info</a>
+             <a href="#" class="btn-primary" style="background: white; color: #be2ed6;">Tuition & Fees</a>
+          </div>
+       </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+       <div class="container">
+          <div class="section-header text-center mb-60">
+             <h2 class="section-title" style="font-family: 'Playfair Display', serif; font-size: 42px; color: #be2ed6;">Frequently Asked Questions</h2>
+          </div>
+
+          <div style="max-width: 900px; margin: 0 auto;">
+             <div class="faq-item">
+                <div class="faq-question">When should I expect an admission decision? <i class="fa-solid fa-plus"></i></div>
+                <div class="faq-answer">Generally, admission decisions are sent out via email 2-3 weeks after your interview process is complete and all supporting documents have been verified.</div>
+             </div>
+             <div class="faq-item">
+                <div class="faq-question">Is the BBIU entrance exam mandatory for all applicants? <i class="fa-solid fa-plus"></i></div>
+                <div class="faq-answer">Yes, all prospective undergraduate students must sit for our entrance examination to assess their quantitative and verbal reasoning skills.</div>
+             </div>
+             <div class="faq-item">
+                <div class="faq-question">Can I apply for multiple programs at once? <i class="fa-solid fa-plus"></i></div>
+                <div class="faq-answer">You can indicate up to two choices of programs in your application. Your primary choice will be considered first based on your qualifications.</div>
+             </div>
+             <div class="faq-item">
+                <div class="faq-question">What is the application fee? <i class="fa-solid fa-plus"></i></div>
+                <div class="faq-answer">The current undergraduate application fee is $30 USD (or equivalent in Liberian Dollars), which is non-refundable.</div>
+             </div>
+          </div>
+       </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <div class="footer-top pt-80 pb-60">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-widget widget-about">
+                        <a href="index.html" class="footer-brand mb-30" style="text-decoration: none;">
+                        <img src="assets/logo.png" alt="Footer Logo" class="footer-logo-img">
+                        <div class="footer-logo-text">
+                            <span class="footer-logo-title">Best Brain</span>
+                            <span class="footer-logo-subtitle">International University</span>
+                        </div>
+                    </a>
+                        <p>Best Brain International University is a premier institution dedicated to excellence in teaching, learning, and research, developing leaders who make a difference globally.</p>
+                        <div class="social-links mt-30">
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-widget widget-links">
+                        <h4 class="widget-title">Quick Links</h4>
+                        <ul>
+                            <li><a href="about-overview.html">About University</a></li>
+                            <li><a href="programs.html">Academic Programs</a></li>
+                            <li><a href="admissions-overview.html">Admissions Info</a></li>
+                            <li><a href="student-life.html">Student Life</a></li>
+                            <li><a href="#">University Events</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-widget widget-links">
+                        <h4 class="widget-title">Resources</h4>
+                        <ul>
+                            <li><a href="#">Student Portal</a></li>
+                            <li><a href="#">Library Catalogs</a></li>
+                            <li><a href="#">Alumni Network</a></li>
+                            <li><a href="#">Career Services</a></li>
+                            <li><a href="#">Campus Map</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-widget widget-contact">
+                        <h4 class="widget-title">Contact Us</h4>
+                        <ul class="contact-info">
+                            <li><i class="fa-solid fa-location-dot"></i> Guest House Road, Thinker’s Village, RIA Road, Paynesville, Liberia</li>
+                            <li><i class="fa-solid fa-phone"></i> +231-770-370-894 / +231-881-324-323</li>
+                            <li><i class="fa-solid fa-envelope"></i> info@bbiu.org.lr</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-inner">
+                    <p class="copyright">&copy; 2026 Best Brain International University/ Developed by Leda Group Inc. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Use</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+

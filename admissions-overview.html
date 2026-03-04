@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admissions Overview - Best Brain International University</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .admissions-overview-section {
+        padding: 100px 0;
+      }
+      .dean-message-card {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 400px 1fr;
+        margin-bottom: 80px;
+      }
+      .dean-img-wrapper {
+        height: 100%;
+        min-height: 500px;
+      }
+      .dean-img-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .dean-content {
+        padding: 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .dean-sig {
+        margin-top: 30px;
+      }
+      .dean-name {
+        font-family: 'Playfair Display', serif;
+        font-size: 24px;
+        color: #be2ed6;
+        margin-bottom: 5px;
+      }
+      .dean-title {
+        color: #f7a800;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 14px;
+        letter-spacing: 1px;
+      }
+
+      .process-step-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        margin-top: 50px;
+      }
+      .process-card {
+        text-align: center;
+        padding: 40px 20px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        z-index: 1;
+      }
+      .process-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(190, 46, 214, 0.1);
+      }
+      .step-number {
+        position: absolute;
+        top: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40px;
+        height: 40px;
+        background: #f7a800;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 18px;
+        box-shadow: 0 5px 15px rgba(247, 168, 0, 0.4);
+      }
+      .step-icon {
+        font-size: 40px;
+        color: #be2ed6;
+        margin-bottom: 25px;
+        display: block;
+      }
+      .step-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 20px;
+        color: #333;
+        margin-bottom: 15px;
+      }
+      .step-desc {
+        color: #666;
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
+      .cta-bar {
+        background: #be2ed6;
+        color: white;
+        padding: 80px 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .cta-bar::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at top right, rgba(255,255,255,0.1) 0%, transparent 70%);
+      }
+      
+      @media (max-width: 991px) {
+        .dean-message-card {
+          grid-template-columns: 1fr;
+        }
+        .dean-img-wrapper {
+          height: 400px;
+          min-height: auto;
+        }
+        .process-step-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 575px) {
+        .process-step-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <div class="container top-bar-container">
+        <div class="top-bar-left">
+          <a href="mailto:info@bbiu.org.lr" class="contact-item"
+            ><i class="fa-regular fa-envelope"></i> info@bbiu.org.lr</a
+          >
+          <span class="contact-item"
+            ><i class="fa-solid fa-phone"></i> +231-770-370-894 / +231-881-324-323</span
+          >
+        </div>
+        <div class="top-bar-right">
+          <a href="#">Alumni</a>
+          <a href="#">Calendar</a>
+          <a href="#">Portal</a>
+          <a href="#" class="btn-support">Support BBU</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header class="main-header">
+      <div class="container header-container">
+        <div class="logo">
+          <img
+            src="assets/logo.png"
+            alt="Best Brain International University Logo"
+            class="logo-img"
+          />
+          <div class="logo-text">
+            <span class="logo-title">Best Brain</span>
+            <span class="logo-subtitle">International University</span>
+          </div>
+        </div>
+
+        <nav class="main-nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li class="has-mega-menu">
+              <a href="#">About Us <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 5px;"></i></a>
+              <div class="mega-menu">
+                <div class="mega-menu-content">
+                  <ul class="mega-menu-list">
+                    <li><a href="about-overview.html"><i class="fa-solid fa-angle-right"></i> Overview</a></li>
+                    <li><a href="history.html"><i class="fa-solid fa-angle-right"></i> History</a></li>
+                    <li><a href="mission-vision.html"><i class="fa-solid fa-angle-right"></i> Mission & Vision</a></li>
+                    <li><a href="leadership.html"><i class="fa-solid fa-angle-right"></i> Leadership & Directorates</a></li>
+                    <li><a href="affiliates.html"><i class="fa-solid fa-angle-right"></i> Affiliates & Partners</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="has-mega-menu">
+              <a href="#">Academics <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 5px;"></i></a>
+              <div class="mega-menu">
+                <div class="mega-menu-content">
+                  <ul class="mega-menu-list">
+                    <li><a href="academics-overview.html"><i class="fa-solid fa-angle-right"></i> Overview</a></li>
+                    <li><a href="colleges.html"><i class="fa-solid fa-angle-right"></i> Colleges & Schools</a></li>
+                    <li><a href="programs.html"><i class="fa-solid fa-angle-right"></i> Programs</a></li>
+                    <li><a href="calendar.html"><i class="fa-solid fa-angle-right"></i> Academic Calendar</a></li>
+                    <li><a href="library.html"><i class="fa-solid fa-angle-right"></i> Library</a></li>
+                    <li><a href="journals.html"><i class="fa-solid fa-angle-right"></i> BBIU Journals</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="has-mega-menu">
+              <a href="#" class="active">Admissions <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 5px;"></i></a>
+              <div class="mega-menu">
+                <div class="mega-menu-content">
+                  <ul class="mega-menu-list">
+                    <li><a href="admissions-overview.html"><i class="fa-solid fa-angle-right"></i> Overview</a></li>
+                    <li><a href="undergraduate-admissions.html"><i class="fa-solid fa-angle-right"></i> Undergraduate</a></li>
+                    <li><a href="transfer-admissions.html"><i class="fa-solid fa-angle-right"></i> Transfer Students</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+
+<li><a href="student-life.html">Student Life</a></li>
+            <li class="search-icon">
+              <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Page Banner -->
+    <div class="page-banner" style="background-image: url('assets/admissions_hero_1772616165465.png'); position: relative; padding: 140px 0; text-align: center; color: white; background-size: cover; background-position: center;">
+      <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(190, 46, 214, 0.85);"></div>
+      <div class="container" style="position: relative; z-index: 1;">
+        <h1 style="font-family: 'Playfair Display', serif; font-size: 56px; margin-bottom: 20px;">Admissions Overview</h1>
+        <div style="font-size: 18px; font-weight: 500;">
+          <a href="index.html" style="color: #f7a800; text-decoration: none;">Home</a> 
+          <span style="margin: 0 12px;"><i class="fa-solid fa-angle-right"></i></span> 
+          <span>Admissions</span>
+          <span style="margin: 0 12px;"><i class="fa-solid fa-angle-right"></i></span> 
+          <span>Overview</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Message from Dean -->
+    <section class="admissions-overview-section pb-60">
+      <div class="container">
+        <div class="dean-message-card">
+          <div class="dean-img-wrapper">
+            <img src="assets/486315870_1073522748125162_6999492349873762032_n.jpg" alt="Dean of Admissions">
+          </div>
+          <div class="dean-content">
+            <h5 class="section-subtitle" style="color: #f7a800; font-weight: 600; text-transform: uppercase;">Welcome Prospective Students</h5>
+            <h2 class="section-title" style="font-family: 'Playfair Display', serif; font-size: 36px; color: #be2ed6; margin-bottom: 25px;">Your Journey Begins Here</h2>
+            <p style="color: #555; line-height: 1.8; margin-bottom: 20px; font-size: 16px;">
+              Choosing the right university is one of the most significant decisions you'll ever make. At Best Brain International University, we are looking for more than just high-achieving students; we are looking for future leaders, innovators, and changemakers who are ready to challenge the status quo.
+            </p>
+            <p style="color: #555; line-height: 1.8; margin-bottom: 20px; font-size: 16px;">
+              Our holistic admissions process is designed to understand you as a whole person—your passions, your experiences, and your potential to contribute to our vibrant multicultural community. We invite you to explore our programs, visit our campus, and discover how BBIU can help you reach your highest potential.
+            </p>
+            <div class="dean-sig">
+              <h4 class="dean-name">Dr. Sarah Thompson</h4>
+              <p class="dean-title">Dean of Admissions & Enrollment</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Admission Stats / Quick Info -->
+    <section class="stats-banner" style="background: #f4f7fa; padding: 80px 0;">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; text-align: center;">
+          <div>
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 48px; color: #be2ed6; margin-bottom: 10px;">March 15</h3>
+            <p style="color: #666; font-weight: 600; text-transform: uppercase; font-size: 14px;">Spring Deadline</p>
+          </div>
+          <div>
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 48px; color: #f7a800; margin-bottom: 10px;">85%</h3>
+            <p style="color: #666; font-weight: 600; text-transform: uppercase; font-size: 14px;">Scholarship Coverage</p>
+          </div>
+          <div>
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 48px; color: #be2ed6; margin-bottom: 10px;">12+</h3>
+            <p style="color: #666; font-weight: 600; text-transform: uppercase; font-size: 14px;">Countries Represented</p>
+          </div>
+          <div>
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 48px; color: #f7a800; margin-bottom: 10px;">August 1</h3>
+            <p style="color: #666; font-weight: 600; text-transform: uppercase; font-size: 14px;">Fall Deadline</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Application Process -->
+    <section class="admissions-overview-section">
+      <div class="container">
+        <div class="section-header text-center mb-60">
+          <h2 class="section-title" style="font-family: 'Playfair Display', serif; font-size: 42px; color: #be2ed6; margin-bottom: 15px;">How to Apply</h2>
+          <p style="color: #666; max-width: 600px; margin: 0 auto;">Follow our simple four-step process to become a part of the Best Brain International University community.</p>
+          <div style="width: 80px; height: 4px; background: #f7a800; margin: 25px auto 0;"></div>
+        </div>
+
+        <div class="process-step-grid">
+          <!-- Step 1 -->
+          <div class="process-card">
+            <span class="step-number">1</span>
+            <i class="fa-solid fa-file-pen step-icon"></i>
+            <h3 class="step-title">Online Application</h3>
+            <p class="step-desc">Create your profile on our student portal and complete the comprehensive application form.</p>
+          </div>
+          <!-- Step 2 -->
+          <div class="process-card">
+            <span class="step-number">2</span>
+            <i class="fa-solid fa-upload step-icon"></i>
+            <h3 class="step-title">Document Submission</h3>
+            <p class="step-desc">Upload your high school transcripts, ID, and personal statement for initial screening.</p>
+          </div>
+          <!-- Step 3 -->
+          <div class="process-card">
+            <span class="step-number">3</span>
+            <i class="fa-solid fa-user-tie step-icon"></i>
+            <h3 class="step-title">Interview & Review</h3>
+            <h3 class="step-title">Interview & Review</h3>
+            <p class="step-desc">Attend a virtual or in-person interview with our admissions committee to discuss your goals.</p>
+          </div>
+          <!-- Step 4 -->
+          <div class="process-card">
+            <span class="step-number">4</span>
+            <i class="fa-solid fa-envelope-open-text step-icon"></i>
+            <h3 class="step-title">Offer & Enrollment</h3>
+            <p class="step-desc">Receive your admission decision and complete the enrollment fee to secure your place.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-bar">
+      <div class="container">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 42px; margin-bottom: 20px;">Ready to Start Your Future?</h2>
+        <p style="margin-bottom: 40px; font-size: 18px; max-width: 700px; margin-left: auto; margin-right: auto; opacity: 0.9;">Join thousands of students who are defining the next generation of global leaders. Applications for the Fall intake are now open.</p>
+        <div style="display: flex; gap: 20px; justify-content: center;">
+          <a href="#" class="btn-primary" style="background: #f7a800; color: white;">Apply Now</a>
+          <a href="#" class="btn-primary" style="background: white; color: #be2ed6;">Download Prospectus</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <div class="footer-top pt-80 pb-60">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-widget widget-about">
+                        <a href="index.html" class="footer-brand mb-30" style="text-decoration: none;">
+                        <img src="assets/logo.png" alt="Footer Logo" class="footer-logo-img">
+                        <div class="footer-logo-text">
+                            <span class="footer-logo-title">Best Brain</span>
+                            <span class="footer-logo-subtitle">International University</span>
+                        </div>
+                    </a>
+                        <p>Best Brain International University is a premier institution dedicated to excellence in teaching, learning, and research, developing leaders who make a difference globally.</p>
+                        <div class="social-links mt-30">
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-widget widget-links">
+                        <h4 class="widget-title">Quick Links</h4>
+                        <ul>
+                            <li><a href="about-overview.html">About University</a></li>
+                            <li><a href="programs.html">Academic Programs</a></li>
+                            <li><a href="admissions-overview.html">Admissions Info</a></li>
+                            <li><a href="student-life.html">Student Life</a></li>
+                            <li><a href="#">University Events</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-widget widget-links">
+                        <h4 class="widget-title">Resources</h4>
+                        <ul>
+                            <li><a href="#">Student Portal</a></li>
+                            <li><a href="#">Library Catalogs</a></li>
+                            <li><a href="#">Alumni Network</a></li>
+                            <li><a href="#">Career Services</a></li>
+                            <li><a href="#">Campus Map</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-widget widget-contact">
+                        <h4 class="widget-title">Contact Us</h4>
+                        <ul class="contact-info">
+                            <li><i class="fa-solid fa-location-dot"></i> Guest House Road, Thinker’s Village, RIA Road, Paynesville, Liberia</li>
+                            <li><i class="fa-solid fa-phone"></i> +231-770-370-894 / +231-881-324-323</li>
+                            <li><i class="fa-solid fa-envelope"></i> info@bbiu.org.lr</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-inner">
+                    <p class="copyright">&copy; 2026 Best Brain International University/ Developed by Leda Group Inc. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Use</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+

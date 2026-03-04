@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Academics Overview - Best Brain International University</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .college-card {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .college-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+      }
+      .college-img-wrapper {
+        height: 220px;
+        overflow: hidden;
+        position: relative;
+      }
+      .college-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+      .college-card:hover .college-img {
+        transform: scale(1.05);
+      }
+      .college-icon {
+        position: absolute;
+        bottom: -20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        background: #f7a800;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 20px;
+        box-shadow: 0 5px 15px rgba(247, 168, 0, 0.4);
+        z-index: 2;
+      }
+      .college-info {
+        padding: 30px 20px;
+      }
+      .college-title {
+        font-family: 'Playfair Display', serif;
+        color: #be2ed6;
+        font-size: 22px;
+        margin-bottom: 10px;
+      }
+      .college-desc {
+        color: #666;
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+      .college-link {
+        color: #be2ed6;
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+        transition: color 0.3s ease;
+      }
+      .college-link:hover {
+        color: #f7a800;
+      }
+      
+      .stat-box {
+        text-align: center;
+        padding: 30px;
+        border-right: 1px solid rgba(255,255,255,0.2);
+      }
+      .stat-box:last-child {
+        border-right: none;
+      }
+      .stat-number {
+        font-family: 'Playfair Display', serif;
+        font-size: 48px;
+        color: #f7a800;
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+      .stat-label {
+        color: white;
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .program-type-box {
+        background: white;
+        padding: 40px;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        border: 1px solid #f4f7fa;
+      }
+      .pt-icon {
+        width: 80px;
+        height: 80px;
+        background: rgba(190, 46, 214, 0.05);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        font-size: 32px;
+        color: #be2ed6;
+      }
+      .pt-title {
+        font-family: 'Playfair Display', serif;
+        color: #be2ed6;
+        font-size: 24px;
+        margin-bottom: 15px;
+      }
+      .pt-desc {
+        color: #666;
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <div class="container top-bar-container">
+        <div class="top-bar-left">
+          <a href="mailto:info@bbiu.org.lr" class="contact-item"
+            ><i class="fa-regular fa-envelope"></i> info@bbiu.org.lr</a
+          >
+          <span class="contact-item"
+            ><i class="fa-solid fa-phone"></i> +231-770-370-894 / +231-881-324-323</span
+          >
+        </div>
+        <div class="top-bar-right">
+          <a href="#">Alumni</a>
+          <a href="#">Calendar</a>
+          <a href="#">Portal</a>
+          <a href="#" class="btn-support">Support BBU</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header class="main-header">
+      <div class="container header-container">
+        <div class="logo">
+          <img
+            src="assets/logo.png"
+            alt="Best Brain International University Logo"
+            class="logo-img"
+          />
+          <div class="logo-text">
+            <span class="logo-title">Best Brain</span>
+            <span class="logo-subtitle">International University</span>
+          </div>
+        </div>
+
+        <nav class="main-nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li class="has-mega-menu">
+              <a href="#">About Us <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 5px;"></i></a>
+              <div class="mega-menu">
+                <div class="mega-menu-content">
+                  <ul class="mega-menu-list">
+                    <li><a href="about-overview.html"><i class="fa-solid fa-angle-right"></i> Overview</a></li>
+                    <li><a href="history.html"><i class="fa-solid fa-angle-right"></i> History</a></li>
+                    <li><a href="mission-vision.html"><i class="fa-solid fa-angle-right"></i> Mission & Vision</a></li>
+                    <li><a href="leadership.html"><i class="fa-solid fa-angle-right"></i> Leadership & Directorates</a></li>
+                    <li><a href="affiliates.html"><i class="fa-solid fa-angle-right"></i> Affiliates & Partners</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="has-mega-menu">
+              <a href="#" class="active">Academics <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 5px;"></i></a>
+              <div class="mega-menu">
+                <div class="mega-menu-content">
+                  <ul class="mega-menu-list">
+                    <li><a href="academics-overview.html"><i class="fa-solid fa-angle-right"></i> Overview</a></li>
+                    <li><a href="colleges.html"><i class="fa-solid fa-angle-right"></i> Colleges & Schools</a></li>
+                    <li><a href="programs.html"><i class="fa-solid fa-angle-right"></i> Programs</a></li>
+                    <li><a href="calendar.html"><i class="fa-solid fa-angle-right"></i> Academic Calendar</a></li>
+                    <li><a href="library.html"><i class="fa-solid fa-angle-right"></i> Library</a></li>
+                    <li><a href="journals.html"><i class="fa-solid fa-angle-right"></i> BBIU Journals</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="has-mega-menu">
+              <a href="#">Admissions <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 5px;"></i></a>
+              <div class="mega-menu">
+                <div class="mega-menu-content">
+                  <ul class="mega-menu-list">
+                    <li><a href="admissions-overview.html"><i class="fa-solid fa-angle-right"></i> Overview</a></li>
+                    <li><a href="undergraduate-admissions.html"><i class="fa-solid fa-angle-right"></i> Undergraduate</a></li>
+                    <li><a href="transfer-admissions.html"><i class="fa-solid fa-angle-right"></i> Transfer Students</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+
+<li><a href="student-life.html">Student Life</a></li>
+            <li class="search-icon">
+              <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Page Banner -->
+    <div class="page-banner" style="background-image: url('assets/hero_slide_1.png'); position: relative; padding: 120px 0; text-align: center; color: white; background-size: cover; background-position: center;">
+      <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(190, 46, 214, 0.85);"></div>
+      <div class="container" style="position: relative; z-index: 1;">
+        <h1 style="font-family: 'Playfair Display', serif; font-size: 48px; margin-bottom: 15px;">Academics Overview</h1>
+        <div style="font-size: 16px;">
+          <a href="index.html" style="color: #f7a800; text-decoration: none;">Home</a> 
+          <span style="margin: 0 10px;"><i class="fa-solid fa-angle-right"></i></span> 
+          <span>Academics</span>
+          <span style="margin: 0 10px;"><i class="fa-solid fa-angle-right"></i></span> 
+          <span>Overview</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Intro Text -->
+    <section class="pt-80 pb-60">
+      <div class="container text-center">
+        <div style="max-width: 800px; margin: 0 auto;">
+          <h5 class="section-subtitle" style="color: #f7a800; font-weight: 600; text-transform: uppercase;">Pursue Knowledge</h5>
+          <h2 class="section-title" style="font-family: 'Playfair Display', serif; font-size: 36px; color: #be2ed6; margin-bottom: 20px;">Academic Excellence at BBIU</h2>
+          <p style="color: #555; font-size: 16px; line-height: 1.8;">
+             At Best Brains International University, we are committed to providing a transformative educational experience. Our academic programs are designed to challenge, inspire, and prepare students for success in a rapidly changing world. With a focus on both theoretical knowledge and practical application, our graduates are equipped to lead.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fast Facts / Stats -->
+    <section class="stats-section bg-primary pt-60 pb-60" style="background-color: #be2ed6; margin-bottom: 80px;">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+          <div class="stat-box">
+             <div class="stat-number">4</div>
+             <div class="stat-label">Colleges</div>
+          </div>
+          <div class="stat-box">
+             <div class="stat-number">15+</div>
+             <div class="stat-label">Degree Programs</div>
+          </div>
+          <div class="stat-box">
+             <div class="stat-number">1:18</div>
+             <div class="stat-label">Faculty-Student Ratio</div>
+          </div>
+          <div class="stat-box">
+             <div class="stat-number">2021</div>
+             <div class="stat-label">Year Opened</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Colleges and Schools -->
+    <section class="colleges-section pt-40 pb-100" style="padding-bottom: 80px;">
+      <div class="container">
+        <div class="section-header text-center mb-50" style="margin-bottom: 60px;">
+          <h2 class="section-title" style="font-family: 'Playfair Display', serif; font-size: 36px; color: #be2ed6;">Our Colleges & Schools</h2>
+          <div style="width: 60px; height: 3px; background: #f7a800; margin: 15px auto 0;"></div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+          
+          <!-- College 1 -->
+          <div class="college-card">
+            <div class="college-img-wrapper">
+               <img src="assets/course_tech.png" alt="College of IT" class="college-img">
+               <div class="college-icon"><i class="fa-solid fa-laptop-code"></i></div>
+            </div>
+            <div class="college-info">
+               <h3 class="college-title">College of Information Technology</h3>
+               <p class="college-desc">Equipping students with cutting-edge skills in software development, cybersecurity, network engineering, and data science.</p>
+               <a href="#" class="college-link">Explore Programs <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- College 2 -->
+          <div class="college-card">
+            <div class="college-img-wrapper">
+               <img src="assets/course_bus.png" alt="College of Business" class="college-img">
+               <div class="college-icon"><i class="fa-solid fa-chart-line"></i></div>
+            </div>
+            <div class="college-info">
+               <h3 class="college-title">College of Business Administration</h3>
+               <p class="college-desc">Fostering entrepreneurial spirit and developing the next generation of business leaders, managers, and corporate innovators.</p>
+               <a href="#" class="college-link">Explore Programs <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            </div>
+          </div>
+
+
+          <!-- College 3 -->
+          <div class="college-card">
+            <div class="college-img-wrapper">
+               <img src="assets/college_education.png" alt="College of Education" class="college-img">
+               <div class="college-icon"><i class="fa-solid fa-book-open-reader"></i></div>
+            </div>
+            <div class="college-info">
+               <h3 class="college-title">College of Education</h3>
+               <p class="college-desc">Preparing passionate educators with modern pedagogical techniques to shape minds and transform the educational landscape.</p>
+               <a href="#" class="college-link">Explore Programs <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- College 4 -->
+          <div class="college-card">
+            <div class="college-img-wrapper">
+               <img src="assets/hero_slide_2.png" alt="College of Liberal Arts" class="college-img">
+               <div class="college-icon"><i class="fa-solid fa-landmark"></i></div>
+            </div>
+            <div class="college-info">
+               <h3 class="college-title">College of Liberal Arts</h3>
+               <p class="college-desc">Cultivating critical thinking, communication, and a deep understanding of human culture, society, and expression.</p>
+               <a href="#" class="college-link">Explore Programs <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Program Types block -->
+    <section class="program-types bg-light pt-80 pb-80" style="background-color: #f4f7fa; padding: 80px 0;">
+      <div class="container">
+        <div class="section-header text-center mb-50" style="margin-bottom: 60px;">
+          <h2 class="section-title" style="font-family: 'Playfair Display', serif; font-size: 36px; color: #be2ed6;">Degree Types</h2>
+          <div style="width: 60px; height: 3px; background: #f7a800; margin: 15px auto 40px;"></div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+           <div class="program-type-box">
+              <div class="pt-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+              <h3 class="pt-title">Undergraduate Programs</h3>
+              <p class="pt-desc">Comprehensive Bachelor's degree programs designed to provide a strong foundation in your chosen field of study over four years.</p>
+           </div>
+           <div class="program-type-box">
+              <div class="pt-icon"><i class="fa-solid fa-award"></i></div>
+              <h3 class="pt-title">Certificate Programs</h3>
+              <p class="pt-desc">Short-term, focused technical and professional training certificates designed to provide immediate career readiness and skill enhancement.</p>
+           </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <div class="footer-top pt-80 pb-60">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-widget widget-about">
+                        <a href="index.html" class="footer-brand mb-30" style="text-decoration: none;">
+                        <img src="assets/logo.png" alt="Footer Logo" class="footer-logo-img">
+                        <div class="footer-logo-text">
+                            <span class="footer-logo-title">Best Brain</span>
+                            <span class="footer-logo-subtitle">International University</span>
+                        </div>
+                    </a>
+                        <p>Best Brain International University is a premier institution dedicated to excellence in teaching, learning, and research, developing leaders who make a difference globally.</p>
+                        <div class="social-links mt-30">
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-widget widget-links">
+                        <h4 class="widget-title">Quick Links</h4>
+                        <ul>
+                            <li><a href="about-overview.html">About University</a></li>
+                            <li><a href="programs.html">Academic Programs</a></li>
+                            <li><a href="admissions-overview.html">Admissions Info</a></li>
+                            <li><a href="student-life.html">Student Life</a></li>
+                            <li><a href="#">University Events</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-widget widget-links">
+                        <h4 class="widget-title">Resources</h4>
+                        <ul>
+                            <li><a href="#">Student Portal</a></li>
+                            <li><a href="#">Library Catalogs</a></li>
+                            <li><a href="#">Alumni Network</a></li>
+                            <li><a href="#">Career Services</a></li>
+                            <li><a href="#">Campus Map</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-widget widget-contact">
+                        <h4 class="widget-title">Contact Us</h4>
+                        <ul class="contact-info">
+                            <li><i class="fa-solid fa-location-dot"></i> Guest House Road, Thinker’s Village, RIA Road, Paynesville, Liberia</li>
+                            <li><i class="fa-solid fa-phone"></i> +231-770-370-894 / +231-881-324-323</li>
+                            <li><i class="fa-solid fa-envelope"></i> info@bbiu.org.lr</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-inner">
+                    <p class="copyright">&copy; 2026 Best Brain International University/ Developed by Leda . All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Use</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+

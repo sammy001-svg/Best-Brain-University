@@ -1,0 +1,21 @@
+# Best Brain University .gitignore
+
+# Artifacts
+.gemini/
+brain/
+*task.md
+*implementation_plan.md
+*walkthrough.md
+
+# OS files
+Thumbs.db
+Desktop.ini
+
+# IDES
+.vscode/
+.idea/
+*.swp
+
+# Temporary
+/tmp/
+*.log

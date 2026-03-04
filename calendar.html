@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Academic Calendar - Best Brain International University</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .calendar-tabs {
+         display: flex;
+         justify-content: center;
+         gap: 20px;
+         margin-bottom: 50px;
+         border-bottom: 2px solid #eee;
+         padding-bottom: 15px;
+      }
+      
+      .tab-btn {
+         background: none;
+         border: none;
+         font-family: 'Playfair Display', serif;
+         font-size: 24px;
+         color: #777;
+         cursor: pointer;
+         padding: 10px 20px;
+         position: relative;
+         transition: all 0.3s ease;
+      }
+      
+      .tab-btn.active {
+         color: #be2ed6;
+         font-weight: 700;
+      }
+      
+      .tab-btn.active::after {
+         content: '';
+         position: absolute;
+         bottom: -17px;
+         left: 0;
+         width: 100%;
+         height: 3px;
+         background: #f7a800;
+      }
+
+      .calendar-content {
+         display: none;
+         animation: fadeIn 0.5s ease;
+      }
+      
+      .calendar-content.active {
+         display: block;
+      }
+
+      @keyframes fadeIn {
+         from { opacity: 0; transform: translateY(10px); }
+         to { opacity: 1; transform: translateY(0); }
+      }
+
+      .semester-table-wrapper {
+         background: white;
+         border-radius: 8px;
+         box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+         border: 1px solid #f0f0f0;
+         overflow: hidden;
+         margin-bottom: 40px;
+      }
+      
+      .semester-header {
+         background: #be2ed6;
+         color: white;
+         padding: 25px 30px;
+         display: flex;
+         align-items: center;
+         gap: 15px;
+      }
+      
+      .semester-header h3 {
+         font-family: 'Playfair Display', serif;
+         font-size: 24px;
+         margin: 0;
+      }
+      
+      .semester-header i {
+         color: #f7a800;
+         font-size: 24px;
+      }
+
+      .calendar-table {
+         width: 100%;
+         border-collapse: collapse;
+      }
+      
+      .calendar-table th, .calendar-table td {
+         padding: 20px 30px;
+         border-bottom: 1px solid #eee;
+         text-align: left;
+      }
+      
+      .calendar-table th {
+         background: #f9fbfd;
+         font-weight: 600;
+         color: #444;
+         text-transform: uppercase;
+         font-size: 14px;
+         letter-spacing: 0.5px;
+      }
+      
+      .calendar-table tr:last-child td {
+         border-bottom: none;
+      }
+      
+      .calendar-table tr:hover td {
+         background-color: #fcfcfc;
+      }
+      
+      .date-col {
+         width: 25%;
+         font-weight: 600;
+         color: #be2ed6;
+      }
+      
+      .event-col {
+         width: 55%;
+         color: #555;
+      }
+      
+      .type-col {
+         width: 20%;
+      }
+      
+      .event-badge {
+         display: inline-block;
+         padding: 5px 12px;
+         border-radius: 20px;
+         font-size: 12px;
+         font-weight: 600;
+      }
+      
+      .badge-academic { background: rgba(190, 46, 214, 0.1); color: #be2ed6; }
+      .badge-holiday { background: rgba(247, 168, 0, 0.15); color: #d99100; }
+      .badge-deadline { background: rgba(220, 53, 69, 0.1); color: #dc3545; }
+
+      .download-section {
+         background: #f4f7fa;
+         border-radius: 8px;
+         padding: 40px;
+         text-align: center;
+         margin-top: 60px;
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         gap: 30px;
+      }
+      
+      .download-text h4 {
+         font-family: 'Playfair Display', serif;
+         font-size: 24px;
+         color: #be2ed6;
+         margin-bottom: 10px;
+      }
+      
+      .download-text p {
+         color: #666;
+         margin: 0;
+      }
+      
+      .btn-download {
+         background: #f7a800;
+         color: #be2ed6;
+         padding: 15px 30px;
+         border-radius: 4px;
+         font-weight: 600;
+         text-decoration: none;
+         display: inline-flex;
+         align-items: center;
+         gap: 10px;
+         transition: all 0.3s ease;
+      }
+      
+      .btn-download:hover {
+         background: #be2ed6;
+         color: white;
+         transform: translateY(-2px);
+      }
+      
+    </style>
+  </head>
+  <body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <div class="container top-bar-container">
+        <div class="top-bar-left">
+          <a href="mailto:info@bbiu.org.lr" class="contact-item"
+            ><i class="fa-regular fa-envelope"></i> info@bbiu.org.lr</a
+          >
+          <span class="contact-item"
+            ><i class="fa-solid fa-phone"></i> +231-770-370-894 / +231-881-324-323</span
+          >
+        </div>
+        <div class="top-bar-right">
+          <a href="#">Alumni</a>
+          <a href="calendar.html">Calendar</a>
+          <a href="#">Portal</a>
+          <a href="#" class="btn-support">Support BBU</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header class="main-header">
+      <div class="container header-container">
+        <div class="logo">
+          <img
+            src="assets/logo.png"
+            alt="Best Brain International University Logo"
+            class="logo-img"
+          />
+          <div class="logo-text">
+            <span class="logo-title">Best Brain</span>
+            <span class="logo-subtitle">International University</span>
+          </div>
+        </div>
+
+        <nav class="main-nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li class="has-mega-menu">
+              <a href="#">About Us <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 5px;"></i></a>
+              <div class="mega-menu">
+                <div class="mega-menu-content">
+                  <ul class="mega-menu-list">
+                    <li><a href="about-overview.html"><i class="fa-solid fa-angle-right"></i> Overview</a></li>
+                    <li><a href="history.html"><i class="fa-solid fa-angle-right"></i> History</a></li>
+                    <li><a href="mission-vision.html"><i class="fa-solid fa-angle-right"></i> Mission & Vision</a></li>
+                    <li><a href="leadership.html"><i class="fa-solid fa-angle-right"></i> Leadership & Directorates</a></li>
+                    <li><a href="affiliates.html"><i class="fa-solid fa-angle-right"></i> Affiliates & Partners</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="has-mega-menu">
+              <a href="#" class="active">Academics <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 5px;"></i></a>
+              <div class="mega-menu">
+                <div class="mega-menu-content">
+                  <ul class="mega-menu-list">
+                    <li><a href="academics-overview.html"><i class="fa-solid fa-angle-right"></i> Overview</a></li>
+                    <li><a href="colleges.html"><i class="fa-solid fa-angle-right"></i> Colleges & Schools</a></li>
+                    <li><a href="programs.html"><i class="fa-solid fa-angle-right"></i> Programs</a></li>
+                    <li><a href="calendar.html"><i class="fa-solid fa-angle-right"></i> Academic Calendar</a></li>
+                    <li><a href="library.html"><i class="fa-solid fa-angle-right"></i> Library</a></li>
+                    <li><a href="journals.html"><i class="fa-solid fa-angle-right"></i> BBIU Journals</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="has-mega-menu">
+              <a href="#">Admissions <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 5px;"></i></a>
+              <div class="mega-menu">
+                <div class="mega-menu-content">
+                  <ul class="mega-menu-list">
+                    <li><a href="admissions-overview.html"><i class="fa-solid fa-angle-right"></i> Overview</a></li>
+                    <li><a href="undergraduate-admissions.html"><i class="fa-solid fa-angle-right"></i> Undergraduate</a></li>
+                    <li><a href="transfer-admissions.html"><i class="fa-solid fa-angle-right"></i> Transfer Students</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+
+<li><a href="student-life.html">Student Life</a></li>
+            <li class="search-icon">
+              <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Page Banner -->
+    <div class="page-banner" style="background-image: url('assets/137668771_110758110929687_1300181901622902668_n.jpg'); position: relative; padding: 120px 0; text-align: center; color: white; background-size: cover; background-position: center 40%;">
+      <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(190, 46, 214, 0.85);"></div>
+      <div class="container" style="position: relative; z-index: 1;">
+        <h1 style="font-family: 'Playfair Display', serif; font-size: 48px; margin-bottom: 15px;">Academic Calendar</h1>
+        <div style="font-size: 16px;">
+          <a href="index.html" style="color: #f7a800; text-decoration: none;">Home</a> 
+          <span style="margin: 0 10px;"><i class="fa-solid fa-angle-right"></i></span> 
+          <span>Academics</span>
+          <span style="margin: 0 10px;"><i class="fa-solid fa-angle-right"></i></span> 
+          <span>Academic Calendar</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Calendar Section -->
+    <section class="pt-80 pb-100">
+       <div class="container">
+          
+          <div class="text-center" style="max-width: 800px; margin: 0 auto 50px;">
+             <p style="color: #555; font-size: 16px; line-height: 1.8;">
+                The BBIU Academic Calendar provides important dates for the academic year, including registration periods, the start and end of classes, holidays, exam weeks, and graduation ceremonies. Please refer to this calendar for crucial deadlines.
+             </p>
+          </div>
+
+          <!-- Tabs -->
+          <div class="calendar-tabs">
+             <button class="tab-btn active" data-target="sem1">Semester I (Fall)</button>
+             <button class="tab-btn" data-target="sem2">Semester II (Spring)</button>
+             <button class="tab-btn" data-target="summer">Summer Session</button>
+          </div>
+
+          <!-- Semester I Content -->
+          <div class="calendar-content active" id="sem1">
+             <div class="semester-table-wrapper">
+                <div class="semester-header">
+                   <i class="fa-regular fa-calendar-days"></i>
+                   <h3>Semester I: August - December 2026</h3>
+                </div>
+                <table class="calendar-table">
+                   <thead>
+                      <tr>
+                         <th class="date-col">Date</th>
+                         <th class="event-col">Event / Deadline</th>
+                         <th class="type-col">Category</th>
+                      </tr>
+                   </thead>
+                   <tbody>
+                      <tr>
+                         <td class="date-col">Aug 10 - Aug 21</td>
+                         <td class="event-col">Registration Period for Returning Students</td>
+                         <td class="type-col"><span class="event-badge badge-deadline">Deadline</span></td>
+                      </tr>
+                      <tr>
+                         <td class="date-col">Aug 24 - Aug 28</td>
+                         <td class="event-col">New Student Orientation Week</td>
+                         <td class="type-col"><span class="event-badge badge-academic">Academic Event</span></td>
+                      </tr>
+                      <tr>
+                         <td class="date-col">September 1</td>
+                         <td class="event-col">First Day of Classes</td>
+                         <td class="type-col"><span class="event-badge badge-academic">Academic Event</span></td>
+                      </tr>
+                      <tr>
+                         <td class="date-col">September 14</td>
+                         <td class="event-col">Last Day to Add/Drop Classes</td>
+                         <td class="type-col"><span class="event-badge badge-deadline">Deadline</span></td>
+                      </tr>
+                      <tr>
+                         <td class="date-col">October 19 - Oct 23</td>
+                         <td class="event-col">Mid-Term Examination Week</td>
+                         <td class="type-col"><span class="event-badge badge-academic">Academic Event</span></td>
+                      </tr>
+                      <tr>
+                         <td class="date-col">November 5</td>
+                         <td class="event-col">Thanksgiving Day (National Holiday)</td>
+                         <td class="type-col"><span class="event-badge badge-holiday">Holiday</span></td>
+                      </tr>
+                      <tr>
+                         <td class="date-col">November 29</td>
+                         <td class="event-col">William V. S. Tubman's Birthday</td>
+                         <td class="type-col"><span class="event-badge badge-holiday">Holiday</span></td>
+                      </tr>
+                      <tr>
+                         <td class="date-col">December 14 - Dec 18</td>
+                         <td class="event-col">Final Examination Week</td>
+                         <td class="type-col"><span class="event-badge badge-academic">Academic Event</span></td>
+                      </tr>
+                      <tr>
+                         <td class="date-col">December 18</td>
+                         <td class="event-col">Semester I Officially Ends</td>
+                         <td class="type-col"><span class="event-badge badge-academic">Academic Event</span></td>
+                      </tr>
+                   </tbody>
+                </table>
+             </div>
+          </div>
+
+          <!-- Semester II Content -->
+          <div class="calendar-content" id="sem2">
+             <div class="semester-table-wrapper">
+                <div class="semester-header">
+                   <i class="fa-regular fa-calendar-days"></i>
+                   <h3>Semester II: January - May 2027</h3>
+                </div>
+                <table class="calendar-table">
+                   <thead>
+                      <tr>
+                         <th class="date-col">Date</th>
+                         <th class="event-col">Event / Deadline</th>
+                         <th class="type-col">Category</th>
+                      </tr>
+                   </thead>
+                   <tbody>
+                      <tr>
+                         <td class="date-col">Jan 4 - Jan 15</td>
+                         <td class="event-col">Registration Period for All Students</td>
+                         <td class="type-col"><span class="event-badge badge-deadline">Deadline</span></td>
+                      </tr>
+                      <tr>
+                         <td class="date-col">January 18</td>
+                         <td class="event-col">First Day of Classes</td>
+                         <td class="type-col"><span class="event-badge badge-academic">Academic Event</span></td>
+                      </tr>
+                      <tr>
+                         <td class="date-col">February 11</td>
+                         <td class="event-col">Armed Forces Day</td>
+                         <td class="type-col"><span class="event-badge badge-holiday">Holiday</span></td>
+                      </tr>
+                      <tr>
+                         <td class="date-col">March 8 - Mar 12</td>
+                         <td class="event-col">Mid-Term Examination Week</td>
+                         <td class="type-col"><span class="event-badge badge-academic">Academic Event</span></td>
+                      </tr>
+                      <tr>
+                         <td class="date-col">March 15</td>
+                         <td class="event-col">J.J. Roberts Birthday</td>
+                         <td class="type-col"><span class="event-badge badge-holiday">Holiday</span></td>
+                      </tr>
+                      <tr>
+                         <td class="date-col">April 9</td>
+                         <td class="event-col">Fast and Prayer Day</td>
+                         <td class="type-col"><span class="event-badge badge-holiday">Holiday</span></td>
+                      </tr>
+                      <tr>
+                         <td class="date-col">May 10 - May 14</td>
+                         <td class="event-col">Final Examination Week</td>
+                         <td class="type-col"><span class="event-badge badge-academic">Academic Event</span></td>
+                      </tr>
+                      <tr>
+                         <td class="date-col">May 14</td>
+                         <td class="event-col">Semester II Officially Ends</td>
+                         <td class="type-col"><span class="event-badge badge-academic">Academic Event</span></td>
+                      </tr>
+                      <tr>
+                         <td class="date-col">May 29</td>
+                         <td class="event-col">Commencement Ceremony</td>
+                         <td class="type-col"><span class="event-badge badge-academic">Academic Event</span></td>
+                      </tr>
+                   </tbody>
+                </table>
+             </div>
+          </div>
+
+          <!-- Summer Session Content -->
+          <div class="calendar-content" id="summer">
+             <div class="semester-table-wrapper">
+                <div class="semester-header">
+                   <i class="fa-regular fa-sun"></i>
+                   <h3>Summer Session: June - July 2027</h3>
+                </div>
+                <table class="calendar-table">
+                   <thead>
+                      <tr>
+                         <th class="date-col">Date</th>
+                         <th class="event-col">Event / Deadline</th>
+                         <th class="type-col">Category</th>
+                      </tr>
+                   </thead>
+                   <tbody>
+                      <tr>
+                         <td class="date-col">May 31 - Jun 4</td>
+                         <td class="event-col">Summer Registration Period</td>
+                         <td class="type-col"><span class="event-badge badge-deadline">Deadline</span></td>
+                      </tr>
+                      <tr>
+                         <td class="date-col">June 7</td>
+                         <td class="event-col">Summer Classes Begin</td>
+                         <td class="type-col"><span class="event-badge badge-academic">Academic Event</span></td>
+                      </tr>
+                      <tr>
+                         <td class="date-col">July 19 - July 23</td>
+                         <td class="event-col">Summer Final Examinations</td>
+                         <td class="type-col"><span class="event-badge badge-academic">Academic Event</span></td>
+                      </tr>
+                      <tr>
+                         <td class="date-col">July 26</td>
+                         <td class="event-col">Independence Day (National Holiday)</td>
+                         <td class="type-col"><span class="event-badge badge-holiday">Holiday</span></td>
+                      </tr>
+                   </tbody>
+                </table>
+             </div>
+          </div>
+
+          <!-- Download Section -->
+          <div class="download-section">
+             <div class="download-text" style="text-align: left;">
+                <h4>Download the Fill Academic Calendar</h4>
+                <p>Get a printable PDF version of the complete academic schedule for your records.</p>
+             </div>
+             <a href="#" class="btn-download"><i class="fa-solid fa-file-pdf"></i> Download PDF (3.2MB)</a>
+          </div>
+
+       </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <div class="footer-top pt-80 pb-60">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-widget widget-about">
+                        <a href="index.html" class="footer-brand mb-30" style="text-decoration: none;">
+                        <img src="assets/logo.png" alt="Footer Logo" class="footer-logo-img">
+                        <div class="footer-logo-text">
+                            <span class="footer-logo-title">Best Brain</span>
+                            <span class="footer-logo-subtitle">International University</span>
+                        </div>
+                    </a>
+                        <p>Best Brain International University is a premier institution dedicated to excellence in teaching, learning, and research, developing leaders who make a difference globally.</p>
+                        <div class="social-links mt-30">
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-widget widget-links">
+                        <h4 class="widget-title">Quick Links</h4>
+                        <ul>
+                            <li><a href="about-overview.html">About University</a></li>
+                            <li><a href="academics-overview.html">Academic Programs</a></li>
+                            <li><a href="admissions-overview.html">Admissions Info</a></li>
+                            <li><a href="student-life.html">Student Life</a></li>
+                            <li><a href="#">University Events</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-widget widget-links">
+                        <h4 class="widget-title">Resources</h4>
+                        <ul>
+                            <li><a href="#">Student Portal</a></li>
+                            <li><a href="#">Library Catalogs</a></li>
+                            <li><a href="#">Alumni Network</a></li>
+                            <li><a href="#">Career Services</a></li>
+                            <li><a href="#">Campus Map</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-widget widget-contact">
+                        <h4 class="widget-title">Contact Us</h4>
+                        <ul class="contact-info">
+                            <li><i class="fa-solid fa-location-dot"></i> Guest House Road, Thinker’s Village, RIA Road, Paynesville, Liberia</li>
+                            <li><i class="fa-solid fa-phone"></i> +231-770-370-894 / +231-881-324-323</li>
+                            <li><i class="fa-solid fa-envelope"></i> info@bbiu.org.lr</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-inner">
+                    <p class="copyright">&copy; 2026 Best Brain International University/ Developed by Leda . All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Use</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+      // Calendar Tabs Script
+      document.addEventListener('DOMContentLoaded', () => {
+         const tabBtns = document.querySelectorAll('.tab-btn');
+         const contents = document.querySelectorAll('.calendar-content');
+
+         tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+               // Remove active class from all buttons and contents
+               tabBtns.forEach(b => b.classList.remove('active'));
+               contents.forEach(c => c.classList.remove('active'));
+
+               // Add active class to clicked button
+               btn.classList.add('active');
+
+               // Show corresponding content
+               const targetId = btn.getAttribute('data-target');
+               document.getElementById(targetId).classList.add('active');
+            });
+         });
+      });
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
+

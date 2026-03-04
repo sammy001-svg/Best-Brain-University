@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transfer Students - Best Brain International University</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .transfer-section {
+        padding: 100px 0;
+      }
+      .transfer-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+      .transfer-image-wrapper {
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      }
+      .transfer-image-wrapper img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      .transfer-content h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 36px;
+        color: #be2ed6;
+        margin-bottom: 25px;
+      }
+      .transfer-content p {
+        color: #555;
+        font-size: 16px;
+        line-height: 1.8;
+        margin-bottom: 20px;
+      }
+
+      .process-timeline {
+        margin-top: 50px;
+        position: relative;
+        padding-left: 30px;
+      }
+      .process-timeline::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: #f7a800;
+      }
+      .timeline-item {
+        position: relative;
+        margin-bottom: 40px;
+      }
+      .timeline-item::after {
+        content: '';
+        position: absolute;
+        left: -34px;
+        top: 0;
+        width: 10px;
+        height: 10px;
+        background: #be2ed6;
+        border-radius: 50%;
+        border: 2px solid white;
+      }
+      .timeline-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 20px;
+        color: #be2ed6;
+        margin-bottom: 10px;
+      }
+      .timeline-desc {
+        color: #666;
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
+      .eligibility-box {
+        background: #f4f7fa;
+        padding: 60px;
+        border-radius: 12px;
+        margin-top: 80px;
+      }
+      .eligibility-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+      }
+      .eligibility-card {
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      }
+      .eligibility-card i {
+        color: #f7a800;
+        font-size: 24px;
+        margin-bottom: 15px;
+        display: block;
+      }
+      .eligibility-title {
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 10px;
+      }
+      .eligibility-desc {
+        color: #666;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      @media (max-width: 991px) {
+        .transfer-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <div class="container top-bar-container">
+        <div class="top-bar-left">
+          <a href="mailto:info@bbiu.org.lr" class="contact-item"
+            ><i class="fa-regular fa-envelope"></i> info@bbiu.org.lr</a
+          >
+          <span class="contact-item"
+            ><i class="fa-solid fa-phone"></i> +231-770-370-894 / +231-881-324-323</span
+          >
+        </div>
+        <div class="top-bar-right">
+          <a href="#">Alumni</a>
+          <a href="#">Calendar</a>
+          <a href="#">Portal</a>
+          <a href="#" class="btn-support">Support BBU</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header class="main-header">
+      <div class="container header-container">
+        <div class="logo">
+          <img
+            src="assets/logo.png"
+            alt="Best Brain International University Logo"
+            class="logo-img"
+          />
+          <div class="logo-text">
+            <span class="logo-title">Best Brain</span>
+            <span class="logo-subtitle">International University</span>
+          </div>
+        </div>
+
+        <nav class="main-nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li class="has-mega-menu">
+              <a href="#">About Us <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 5px;"></i></a>
+              <div class="mega-menu">
+                <div class="mega-menu-content">
+                  <ul class="mega-menu-list">
+                    <li><a href="about-overview.html"><i class="fa-solid fa-angle-right"></i> Overview</a></li>
+                    <li><a href="history.html"><i class="fa-solid fa-angle-right"></i> History</a></li>
+                    <li><a href="mission-vision.html"><i class="fa-solid fa-angle-right"></i> Mission & Vision</a></li>
+                    <li><a href="leadership.html"><i class="fa-solid fa-angle-right"></i> Leadership & Directorates</a></li>
+                    <li><a href="affiliates.html"><i class="fa-solid fa-angle-right"></i> Affiliates & Partners</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="has-mega-menu">
+              <a href="#">Academics <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 5px;"></i></a>
+              <div class="mega-menu">
+                <div class="mega-menu-content">
+                  <ul class="mega-menu-list">
+                    <li><a href="academics-overview.html"><i class="fa-solid fa-angle-right"></i> Overview</a></li>
+                    <li><a href="colleges.html"><i class="fa-solid fa-angle-right"></i> Colleges & Schools</a></li>
+                    <li><a href="programs.html"><i class="fa-solid fa-angle-right"></i> Programs</a></li>
+                    <li><a href="calendar.html"><i class="fa-solid fa-angle-right"></i> Academic Calendar</a></li>
+                    <li><a href="library.html"><i class="fa-solid fa-angle-right"></i> Library</a></li>
+                    <li><a href="journals.html"><i class="fa-solid fa-angle-right"></i> BBIU Journals</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="has-mega-menu">
+              <a href="#" class="active">Admissions <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 5px;"></i></a>
+              <div class="mega-menu">
+                <div class="mega-menu-content">
+                  <ul class="mega-menu-list">
+                    <li><a href="admissions-overview.html"><i class="fa-solid fa-angle-right"></i> Overview</a></li>
+                    <li><a href="undergraduate-admissions.html"><i class="fa-solid fa-angle-right"></i> Undergraduate</a></li>
+                    <li><a href="transfer-admissions.html"><i class="fa-solid fa-angle-right"></i> Transfer Students</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+
+<li><a href="student-life.html">Student Life</a></li>
+            <li class="search-icon">
+              <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Page Banner -->
+    <div class="page-banner" style="background-image: url('assets/transfer_students_hero_1772616811439.png'); position: relative; padding: 140px 0; text-align: center; color: white; background-size: cover; background-position: center;">
+      <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(190, 46, 214, 0.85);"></div>
+      <div class="container" style="position: relative; z-index: 1;">
+        <h1 style="font-family: 'Playfair Display', serif; font-size: 56px; margin-bottom: 20px;">Transfer Students</h1>
+        <div style="font-size: 18px; font-weight: 500;">
+          <a href="index.html" style="color: #f7a800; text-decoration: none;">Home</a> 
+          <span style="margin: 0 12px;"><i class="fa-solid fa-angle-right"></i></span> 
+          <a href="admissions-overview.html" style="color: white; text-decoration: none;">Admissions</a>
+          <span style="margin: 0 12px;"><i class="fa-solid fa-angle-right"></i></span> 
+          <span>Transfer Students</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Transfer Intro Section -->
+    <section class="transfer-section">
+      <div class="container">
+        <div class="transfer-grid">
+           <div class="transfer-content">
+              <h5 class="section-subtitle" style="color: #f7a800; font-weight: 600; text-transform: uppercase; margin-bottom: 10px; display: block;">Continue Your Success</h5>
+              <h2>Transfer to BBIU</h2>
+              <p>At Best Brain International University, we welcome students from all academic backgrounds. If you are looking to finish your degree in a multicultural, innovative environment, BBIU is the perfect place for you. We recognize the hard work you've already put in and strive to make the transfer process as smooth as possible.</p>
+              <p>Our dedicated transfer advisors will work with you one-on-one to evaluate your credits and ensure you stay on track for graduation.</p>
+              
+              <div class="process-timeline">
+                 <div class="timeline-item">
+                    <h4 class="timeline-title">1. Initial Inquiry</h4>
+                    <p class="timeline-desc">Reach out to our admissions team to discuss your current academic standing and goals.</p>
+                 </div>
+                 <div class="timeline-item">
+                    <h4 class="timeline-title">2. Transcript Review</h4>
+                    <p class="timeline-desc">Submit your official transcripts from your current/previous institution for credit evaluation.</p>
+                 </div>
+                 <div class="timeline-item">
+                    <h4 class="timeline-title">3. Admission Decision</h4>
+                    <p class="timeline-desc">Once evaluated, you'll receive an admission offer and a breakdown of transferred credits.</p>
+                 </div>
+              </div>
+           </div>
+           <div class="transfer-image-wrapper">
+              <img src="assets/485667367_1071129378364499_1310311816415714189_n.jpg" alt="Supportive Faculty">
+           </div>
+        </div>
+
+        <div class="eligibility-box">
+           <div style="text-align: center; margin-bottom: 40px;">
+              <h2 style="font-family: 'Playfair Display', serif; color: #be2ed6; font-size: 32px;">Eligibility & Requirements</h2>
+           </div>
+           <div class="eligibility-grid">
+              <div class="eligibility-card">
+                 <i class="fa-solid fa-star-half-stroke"></i>
+                 <h4 class="eligibility-title">Minimum GPA</h4>
+                 <p class="eligibility-desc">Transfer applicants should typically have a cumulative GPA of 2.5 or higher from their previous institution.</p>
+              </div>
+              <div class="eligibility-card">
+                 <i class="fa-solid fa-file-contract"></i>
+                 <h4 class="eligibility-title">Credit Policy</h4>
+                 <p class="eligibility-desc">Generally, we accept credits for courses passed with a 'C' grade or better from accredited institutions.</p>
+              </div>
+              <div class="eligibility-card">
+                 <i class="fa-solid fa-user-shield"></i>
+                 <h4 class="eligibility-title">Good Standing</h4>
+                 <p class="eligibility-desc">Applicants must be in good academic and disciplinary standing at their last attended university.</p>
+              </div>
+              <div class="eligibility-card">
+                 <i class="fa-solid fa-clock-rotate-left"></i>
+                 <h4 class="eligibility-title">Evaluation Time</h4>
+                 <p class="eligibility-desc">Transcript evaluations usually take 7-10 business days after all documents are received.</p>
+              </div>
+           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Support Section -->
+    <section style="background: #f7a800; padding: 80px 0; color: white;">
+       <div class="container text-center">
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 42px; margin-bottom: 25px;">Personalized Support for Every Transfer</h2>
+          <p style="font-size: 18px; max-width: 800px; margin: 0 auto 40px; opacity: 0.9;">
+             Our Transfer Admissions team is here to help you navigate your unique journey. We provide personalized credit maps and financial aid counseling tailored to transfer students.
+          </p>
+          <a href="#" class="btn-primary" style="background: white; color: #f7a800;">Speak with an Advisor</a>
+       </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <div class="footer-top pt-80 pb-60">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-widget widget-about">
+                        <a href="index.html" class="footer-brand mb-30" style="text-decoration: none;">
+                        <img src="assets/logo.png" alt="Footer Logo" class="footer-logo-img">
+                        <div class="footer-logo-text">
+                            <span class="footer-logo-title">Best Brain</span>
+                            <span class="footer-logo-subtitle">International University</span>
+                        </div>
+                    </a>
+                        <p>Best Brain International University is a premier institution dedicated to excellence in teaching, learning, and research, developing leaders who make a difference globally.</p>
+                        <div class="social-links mt-30">
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-widget widget-links">
+                        <h4 class="widget-title">Quick Links</h4>
+                        <ul>
+                            <li><a href="about-overview.html">About University</a></li>
+                            <li><a href="programs.html">Academic Programs</a></li>
+                            <li><a href="admissions-overview.html">Admissions Info</a></li>
+                            <li><a href="student-life.html">Student Life</a></li>
+                            <li><a href="#">University Events</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-widget widget-links">
+                        <h4 class="widget-title">Resources</h4>
+                        <ul>
+                            <li><a href="#">Student Portal</a></li>
+                            <li><a href="#">Library Catalogs</a></li>
+                            <li><a href="#">Alumni Network</a></li>
+                            <li><a href="#">Career Services</a></li>
+                            <li><a href="#">Campus Map</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-widget widget-contact">
+                        <h4 class="widget-title">Contact Us</h4>
+                        <ul class="contact-info">
+                            <li><i class="fa-solid fa-location-dot"></i> Guest House Road, Thinker’s Village, RIA Road, Paynesville, Liberia</li>
+                            <li><i class="fa-solid fa-phone"></i> +231-770-370-894 / +231-881-324-323</li>
+                            <li><i class="fa-solid fa-envelope"></i> info@bbiu.org.lr</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-inner">
+                    <p class="copyright">&copy; 2026 Best Brain International University/ Developed by Leda Group Inc. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Use</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+

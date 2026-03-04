@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Affiliates & Partners - Best Brain International University</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .partner-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+        align-items: center;
+        justify-items: center;
+      }
+      .partner-logo-box {
+        background: white;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        width: 100%;
+        height: 160px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        border: 1px solid #f4f7fa;
+      }
+      .partner-logo-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        border-color: #f7a800;
+      }
+      .partner-logo-box i {
+        font-size: 60px;
+        color: #be2ed6;
+        opacity: 0.7;
+        transition: all 0.3s ease;
+      }
+      .partner-logo-box:hover i {
+        opacity: 1;
+        color: #f7a800;
+        transform: scale(1.1);
+      }
+      
+      .network-card {
+        background: #be2ed6;
+        color: white;
+        border-radius: 12px;
+        padding: 40px;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        transition: transform 0.3s ease;
+      }
+      .network-card:hover {
+        transform: translateY(-5px);
+      }
+      .network-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 150px;
+        height: 150px;
+        background: rgba(247, 168, 0, 0.1);
+        border-radius: 50%;
+        transform: translate(30%, -30%);
+        z-index: -1;
+      }
+      .network-icon {
+        width: 60px;
+        height: 60px;
+        background: #f7a800;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        margin-bottom: 25px;
+        color: white;
+      }
+      .network-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 24px;
+        margin-bottom: 15px;
+      }
+      .network-desc {
+        color: #cbd5e1;
+        line-height: 1.6;
+        margin-bottom: 25px;
+      }
+      .network-link {
+        color: #f7a800;
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: gap 0.3s ease;
+      }
+      .network-link:hover {
+        gap: 12px;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <div class="container top-bar-container">
+        <div class="top-bar-left">
+          <a href="mailto:info@bbiu.org.lr" class="contact-item"
+            ><i class="fa-regular fa-envelope"></i> info@bbiu.org.lr</a
+          >
+          <span class="contact-item"
+            ><i class="fa-solid fa-phone"></i> +231-770-370-894 / +231-881-324-323</span
+          >
+        </div>
+        <div class="top-bar-right">
+          <a href="#">Alumni</a>
+          <a href="#">Calendar</a>
+          <a href="#">Portal</a>
+          <a href="#" class="btn-support">Support BBU</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header class="main-header">
+      <div class="container header-container">
+        <div class="logo">
+          <img
+            src="assets/logo.png"
+            alt="Best Brain International University Logo"
+            class="logo-img"
+          />
+          <div class="logo-text">
+            <span class="logo-title">Best Brain</span>
+            <span class="logo-subtitle">International University</span>
+          </div>
+        </div>
+
+        <nav class="main-nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li class="has-mega-menu">
+              <a href="#" class="active">About Us <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 5px;"></i></a>
+              <div class="mega-menu">
+                <div class="mega-menu-content">
+                  <ul class="mega-menu-list">
+                    <li><a href="about-overview.html"><i class="fa-solid fa-angle-right"></i> Overview</a></li>
+                    <li><a href="history.html"><i class="fa-solid fa-angle-right"></i> History</a></li>
+                    <li><a href="mission-vision.html"><i class="fa-solid fa-angle-right"></i> Mission & Vision</a></li>
+                    <li><a href="leadership.html"><i class="fa-solid fa-angle-right"></i> Leadership & Directorates</a></li>
+                    <li><a href="affiliates.html"><i class="fa-solid fa-angle-right"></i> Affiliates & Partners</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="has-mega-menu">
+              <a href="#">Academics <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 5px;"></i></a>
+              <div class="mega-menu">
+                <div class="mega-menu-content">
+                  <ul class="mega-menu-list">
+                    <li><a href="academics-overview.html"><i class="fa-solid fa-angle-right"></i> Overview</a></li>
+                    <li><a href="colleges.html"><i class="fa-solid fa-angle-right"></i> Colleges & Schools</a></li>
+                    <li><a href="programs.html"><i class="fa-solid fa-angle-right"></i> Programs</a></li>
+                    <li><a href="calendar.html"><i class="fa-solid fa-angle-right"></i> Academic Calendar</a></li>
+                    <li><a href="library.html"><i class="fa-solid fa-angle-right"></i> Library</a></li>
+                    <li><a href="journals.html"><i class="fa-solid fa-angle-right"></i> BBIU Journals</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="has-mega-menu">
+              <a href="#">Admissions <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 5px;"></i></a>
+              <div class="mega-menu">
+                <div class="mega-menu-content">
+                  <ul class="mega-menu-list">
+                    <li><a href="admissions-overview.html"><i class="fa-solid fa-angle-right"></i> Overview</a></li>
+                    <li><a href="undergraduate-admissions.html"><i class="fa-solid fa-angle-right"></i> Undergraduate</a></li>
+                    <li><a href="transfer-admissions.html"><i class="fa-solid fa-angle-right"></i> Transfer Students</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+
+<li><a href="student-life.html">Student Life</a></li>
+            <li class="search-icon">
+              <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Page Banner -->
+    <div class="page-banner" style="background-image: url('assets/hero_slide_3.png'); position: relative; padding: 120px 0; text-align: center; color: white; background-size: cover; background-position: center;">
+      <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(190, 46, 214, 0.85);"></div>
+      <div class="container" style="position: relative; z-index: 1;">
+        <h1 style="font-family: 'Playfair Display', serif; font-size: 48px; margin-bottom: 15px;">Affiliates & Partners</h1>
+        <div style="font-size: 16px;">
+          <a href="index.html" style="color: #f7a800; text-decoration: none;">Home</a> 
+          <span style="margin: 0 10px;"><i class="fa-solid fa-angle-right"></i></span> 
+          <span>About Us</span>
+          <span style="margin: 0 10px;"><i class="fa-solid fa-angle-right"></i></span> 
+          <span>Affiliates</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Intro Text -->
+    <section class="pt-80 pb-60">
+      <div class="container text-center">
+        <div style="max-width: 800px; margin: 0 auto;">
+          <h2 class="section-title" style="font-family: 'Playfair Display', serif; font-size: 32px; color: #be2ed6; margin-bottom: 20px;">Building a Global Network</h2>
+          <p style="color: #555; font-size: 16px; line-height: 1.8;">
+             At Best Brains International University, we believe that collaboration is key to academic excellence and institutional growth. Our strategic partnerships with international universities, industry leaders, and research organizations enrich our curriculum, expand our resources, and provide our students with unparalleled global opportunities.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Global Partners Section (Logos) -->
+    <section class="partners-section bg-light pt-60 pb-80" style="background-color: #f4f7fa;">
+      <div class="container">
+        <div class="section-header text-center mb-50" style="margin-bottom: 50px;">
+          <h5 class="section-subtitle" style="color: #f7a800; font-weight: 600; text-transform: uppercase;">Our International</h5>
+          <h2 class="section-title" style="font-family: 'Playfair Display', serif; font-size: 36px; color: #be2ed6;">Academic Partners</h2>
+          <div style="width: 60px; height: 3px; background: #f7a800; margin: 15px auto 0;"></div>
+        </div>
+
+        <div class="partner-grid">
+           <!-- Placeholder Logos mapping to fake universities -->
+           <div class="partner-logo-box" title="Global Tech University">
+              <i class="fa-brands fa-aws"></i>
+           </div>
+           <div class="partner-logo-box" title="International Science Institute">
+              <i class="fa-solid fa-atom"></i>
+           </div>
+           <div class="partner-logo-box" title="World Business School">
+              <i class="fa-solid fa-building-columns"></i>
+           </div>
+           <div class="partner-logo-box" title="Creative Design Academy">
+              <i class="fa-brands fa-figma"></i>
+           </div>
+           <div class="partner-logo-box" title="Tech Innovators Network">
+              <i class="fa-brands fa-microsoft"></i>
+           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Network Programs Section -->
+    <section class="network-section pt-100 pb-100" style="padding: 80px 0;">
+      <div class="container">
+        
+        <div class="section-header mb-50" style="margin-bottom: 60px;">
+          <h2 class="section-title" style="font-family: 'Playfair Display', serif; font-size: 36px; color: #be2ed6;">Affiliate Programs & Networks</h2>
+          <div style="width: 60px; height: 3px; background: #f7a800; margin-top: 15px;"></div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
+           
+           <div class="network-card">
+              <div class="network-icon"><i class="fa-solid fa-plane-departure"></i></div>
+              <h3 class="network-title">Student Exchange</h3>
+              <p class="network-desc">BBIU students have the opportunity to study a semester abroad at our partner institutions, gaining international exposure, cultural immersion, and broadening their academic perspectives.</p>
+              <a href="#" class="network-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+           </div>
+
+           <div class="network-card">
+              <div class="network-icon"><i class="fa-solid fa-microscope"></i></div>
+              <h3 class="network-title">Joint Research</h3>
+              <p class="network-desc">Our faculty and researchers collaborate with international networks to conduct high-impact research, co-author publications, and secure international research grants.</p>
+              <a href="#" class="network-link">View Publications <i class="fa-solid fa-arrow-right"></i></a>
+           </div>
+
+           <div class="network-card">
+              <div class="network-icon"><i class="fa-solid fa-briefcase"></i></div>
+              <h3 class="network-title">Industry Linkages</h3>
+              <p class="network-desc">We partner with leading corporations and industries to ensure our curriculum remains relevant, secure internship placements, and facilitate graduate employment opportunities.</p>
+              <a href="#" class="network-link">Partner With Us <i class="fa-solid fa-arrow-right"></i></a>
+           </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <div class="footer-top pt-80 pb-60">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-widget widget-about">
+                        <a href="index.html" class="footer-brand mb-30" style="text-decoration: none;">
+                        <img src="assets/logo.png" alt="Footer Logo" class="footer-logo-img">
+                        <div class="footer-logo-text">
+                            <span class="footer-logo-title">Best Brain</span>
+                            <span class="footer-logo-subtitle">International University</span>
+                        </div>
+                    </a>
+                        <p>Best Brain International University is a premier institution dedicated to excellence in teaching, learning, and research, developing leaders who make a difference globally.</p>
+                        <div class="social-links mt-30">
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-widget widget-links">
+                        <h4 class="widget-title">Quick Links</h4>
+                        <ul>
+                            <li><a href="about-overview.html">About University</a></li>
+                            <li><a href="programs.html">Academic Programs</a></li>
+                            <li><a href="admissions-overview.html">Admissions Info</a></li>
+                            <li><a href="student-life.html">Student Life</a></li>
+                            <li><a href="#">University Events</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-widget widget-links">
+                        <h4 class="widget-title">Resources</h4>
+                        <ul>
+                            <li><a href="#">Student Portal</a></li>
+                            <li><a href="#">Library Catalogs</a></li>
+                            <li><a href="#">Alumni Network</a></li>
+                            <li><a href="#">Career Services</a></li>
+                            <li><a href="#">Campus Map</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-widget widget-contact">
+                        <h4 class="widget-title">Contact Us</h4>
+                        <ul class="contact-info">
+                            <li><i class="fa-solid fa-location-dot"></i> Guest House Road, Thinker’s Village, RIA Road, Paynesville, Liberia</li>
+                            <li><i class="fa-solid fa-phone"></i> +231-770-370-894 / +231-881-324-323</li>
+                            <li><i class="fa-solid fa-envelope"></i> info@bbiu.org.lr</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-inner">
+                    <p class="copyright">&copy; 2026 Best Brain International University/ Developed by Leda . All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Use</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+
