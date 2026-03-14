@@ -18,7 +18,103 @@
     />
 
     <link rel="stylesheet" href="styles.css" />
-  </head>
+  <style>
+    /* Blog Modal Styles */
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(53, 6, 62, 0.85);
+        backdrop-filter: blur(8px);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+    .modal-overlay.active {
+        display: flex;
+        opacity: 1;
+    }
+    .college-modal-container {
+        background: white;
+        width: 100%;
+        max-width: 700px;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        position: relative;
+        transform: translateY(30px);
+        transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        margin: 20px;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+    .modal-overlay.active .college-modal-container {
+        transform: translateY(0);
+    }
+    .modal-header {
+        position: relative;
+        height: 300px;
+    }
+    .modal-banner {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .modal-badge {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        background: #f7a800;
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 14px;
+    }
+    .close-modal {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: white;
+        border: none;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 10;
+        font-size: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+    }
+    .close-modal:hover {
+        background: #f7a800;
+        color: white;
+        transform: rotate(90deg);
+    }
+    .modal-body {
+        padding: 30px;
+    }
+    .modal-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 28px;
+        color: #35063e;
+        margin-bottom: 20px;
+    }
+    .modal-description {
+        color: #4a5568;
+        line-height: 1.8;
+        font-size: 16px;
+    }
+</style>
+</head>
   <body>
     <!-- Top Bar -->
     <div class="top-bar">
@@ -220,8 +316,8 @@ programs and character-building initiatives to foster a multicultural environmen
                     <div class="about-image-frame">
                         <img src="assets/WhatsApp%20Image%202026-03-11%20at%209.27.28%20AM.jpeg" alt="Best Brain International University Building" class="about-img">
                         <div class="experience-badge">
-                            <span class="exp-years">25</span>
-                            <span class="exp-text">Years of<br>Excellence</span>
+                            <span class="exp-years">8</span>
+                            <span class="exp-text">years of<br>Excellence</span>
                         </div>
                     </div>
                 </div>
@@ -242,7 +338,7 @@ programs and character-building initiatives to foster a multicultural environmen
                 <!-- Course 1 -->
                 <div class="course-card">
                     <div class="course-img-wrapper">
-                        <img src="assets/course_bus.png" alt="Business Administration" class="course-img">
+                        <img src="assets/home_faculty_bus.jpg" alt="Business Administration" class="course-img">
                         <div class="course-category">Business</div>
                     </div>
                     <div class="course-content">
@@ -261,7 +357,7 @@ programs and character-building initiatives to foster a multicultural environmen
                 <!-- Course 2 -->
                 <div class="course-card">
                     <div class="course-img-wrapper">
-                        <img src="assets/course_tech.png" alt="Computer Science" class="course-img">
+                        <img src="assets/home_faculty_tech.jpg" alt="Computer Science" class="course-img">
                         <div class="course-category">Technology</div>
                     </div>
                     <div class="course-content">
@@ -280,7 +376,7 @@ programs and character-building initiatives to foster a multicultural environmen
                 <!-- Course 3 -->
                 <div class="course-card">
                     <div class="course-img-wrapper">
-                        <img src="assets/course_arts.png" alt="Arts & Humanities" class="course-img">
+                        <img src="assets/home_faculty_arts.jpg" alt="Arts & Humanities" class="course-img">
                         <div class="course-category">Arts</div>
                     </div>
                     <div class="course-content">
@@ -298,7 +394,7 @@ programs and character-building initiatives to foster a multicultural environmen
             </div>
             
             <div class="text-center mt-50">
-                <a href="#" class="btn-outline">View All Programs</a>
+                <a href="programs.html" class="btn-outline">View All Programs</a>
             </div>
         </div>
     </section>
@@ -316,42 +412,42 @@ programs and character-building initiatives to foster a multicultural environmen
                 <!-- Blog 1 -->
                 <article class="blog-card">
                     <div class="blog-img-wrapper">
-                        <img src="assets/blog_academic.png" alt="Academic Excellence" class="blog-img">
+                        <img src="assets/blog_success.jpg" alt="Academic Excellence" class="blog-img">
                         <div class="blog-date"><span>15</span><br>Mar</div>
                     </div>
                     <div class="blog-content">
                         <div class="blog-category">Academics</div>
                         <h3 class="blog-title"><a href="#">Pioneering Research in AI and Sustainable Energy</a></h3>
                         <p class="blog-desc">Our engineering department announces a breakthrough in renewable energy integration using AI-driven smart grids...</p>
-                        <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="#" class="read-more" data-blog="ai-research">Read More <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </article>
 
                 <!-- Blog 2 -->
                 <article class="blog-card">
                     <div class="blog-img-wrapper">
-                        <img src="assets/blog_campus_life.png" alt="Campus Life" class="blog-img">
+                        <img src="assets/blog_event.jpg" alt="Campus Life" class="blog-img">
                         <div class="blog-date"><span>12</span><br>Mar</div>
                     </div>
                     <div class="blog-content">
                         <div class="blog-category">Campus Life</div>
                         <h3 class="blog-title"><a href="#">Annual Cultural Festival: A Celebration of Diversity</a></h3>
                         <p class="blog-desc">Celebrating the rich tapestry of cultures that make BBIU unique, this year's festival saw record participation...</p>
-                        <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="#" class="read-more" data-blog="cultural-fest">Read More <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </article>
 
                 <!-- Blog 3 -->
                 <article class="blog-card">
                     <div class="blog-img-wrapper">
-                        <img src="assets/blog_future_impact.png" alt="Future Impact" class="blog-img">
+                        <img src="assets/blog_leadership.jpg" alt="Future Impact" class="blog-img">
                         <div class="blog-date"><span>10</span><br>Mar</div>
                     </div>
                     <div class="blog-content">
                         <div class="blog-category">Leadership</div>
                         <h3 class="blog-title"><a href="#">Empowering the Next Generation of Global Leaders</a></h3>
                         <p class="blog-desc">A look into how BBIU's leadership programs are preparing students for impactful careers on the international stage...</p>
-                        <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="#" class="read-more" data-blog="leadership-empowerment">Read More <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </article>
             </div>
@@ -426,5 +522,26 @@ programs and character-building initiatives to foster a multicultural environmen
         </div>
     </footer>
     <script src="script.js"></script>
+
+    <!-- Blog Detail Modal -->
+    <div id="blogModal" class="modal-overlay">
+        <div class="college-modal-container">
+            <button class="close-modal closeBlogModal">&times;</button>
+            <div class="modal-header">
+                <img id="modalBlogImage" src="" alt="" class="modal-banner">
+                <div class="modal-badge" id="modalBlogCategory">Category</div>
+            </div>
+            <div class="modal-body">
+                <h2 id="modalBlogTitle" class="modal-title">Blog Title</h2>
+                <div class="modal-meta" style="margin-bottom: 20px; color: #64748b; font-size: 14px;">
+                    <span id="modalBlogDate"><i class="fa-solid fa-calendar-days"></i> Date</span>
+                </div>
+                <div id="modalBlogContent" class="modal-description">
+                    <!-- Full content goes here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
