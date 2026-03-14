@@ -132,6 +132,128 @@
           grid-template-columns: 1fr;
         }
       }
+      /* Modal Styles */
+      .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(53, 6, 62, 0.85);
+        backdrop-filter: blur(8px);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+      }
+      .modal-overlay.active {
+        display: flex;
+        opacity: 1;
+      }
+      .advisor-modal-container {
+        background: white;
+        width: 100%;
+        max-width: 550px;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        position: relative;
+        transform: translateY(30px);
+        transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        margin: 20px;
+      }
+      .modal-overlay.active .advisor-modal-container {
+        transform: translateY(0);
+      }
+      .modal-header {
+        background: #f7a800;
+        padding: 30px;
+        color: white;
+        position: relative;
+      }
+      .modal-header h3 {
+        font-family: 'Playfair Display', serif;
+        font-size: 28px;
+        margin-bottom: 5px;
+      }
+      .modal-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        color: white;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.3s;
+      }
+      .modal-close:hover {
+        background: rgba(255, 255, 255, 0.4);
+      }
+      .modal-body {
+        padding: 40px;
+      }
+      .form-group {
+        margin-bottom: 20px;
+      }
+      .form-group label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: #333;
+        font-size: 14px;
+      }
+      .form-group input, .form-group select, .form-group textarea {
+        width: 100%;
+        padding: 12px 15px;
+        border: 2px solid #eee;
+        border-radius: 8px;
+        font-family: inherit;
+        transition: border-color 0.3s;
+        font-size: 15px;
+      }
+      .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+        border-color: #f7a800;
+        outline: none;
+      }
+      .btn-submit {
+        width: 100%;
+        padding: 14px;
+        background: #f7a800;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.2s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+      .btn-submit:hover {
+        background: #e69a00;
+        transform: translateY(-2px);
+      }
+      .success-state {
+        text-align: center;
+        padding: 20px 0;
+        display: none;
+      }
+      .success-icon {
+        font-size: 60px;
+        color: #37a246;
+        margin-bottom: 20px;
+        display: block;
+      }
     </style>
   </head>
   <body>
@@ -265,7 +387,7 @@
               </div>
            </div>
            <div class="transfer-image-wrapper">
-              <img src="assets/485667367_1071129378364499_1310311816415714189_n.jpg" alt="Supportive Faculty">
+              <img src="assets/WhatsApp%20Image%202026-03-10%20at%204.30.37%20PM.jpeg" alt="Academic Success - Certificate Awarding">
            </div>
         </div>
 
@@ -306,7 +428,7 @@
           <p style="font-size: 18px; max-width: 800px; margin: 0 auto 40px; opacity: 0.9;">
              Our Transfer Admissions team is here to help you navigate your unique journey. We provide personalized credit maps and financial aid counseling tailored to transfer students.
           </p>
-          <a href="#" class="btn-primary" style="background: white; color: #f7a800;">Speak with an Advisor</a>
+          <a href="javascript:void(0)" id="openAdvisorForm" class="btn-primary" style="background: white; color: #f7a800;">Speak with an Advisor</a>
        </div>
     </section>
 
@@ -377,6 +499,61 @@
             </div>
         </div>
     </footer>
+    <!-- Advisor Inquiry Modal -->
+    <div class="modal-overlay" id="advisorFormModal">
+      <div class="advisor-modal-container">
+        <div class="modal-header">
+          <h3>Speak with an Advisor</h3>
+          <p>Get personalized guidance for your transfer journey.</p>
+          <button class="modal-close" id="closeAdvisorForm"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="modal-body">
+          <form id="advisorInquiryForm">
+            <div id="formContent">
+              <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" placeholder="Your Name" required>
+              </div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="form-group">
+                  <label>Email Address</label>
+                  <input type="email" placeholder="email@example.com" required>
+                </div>
+                <div class="form-group">
+                  <label>Phone Number</label>
+                  <input type="tel" placeholder="+231-770-000-000" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Inquiry Subject</label>
+                <select required>
+                  <option value="">Select Topic</option>
+                  <option value="Credit Evaluation">Credit Evaluation</option>
+                  <option value="Degree Programs">Degree Programs</option>
+                  <option value="Financial Aid">Financial Aid / Scholarships</option>
+                  <option value="Application Process">Application Process</option>
+                  <option value="Other">Other Inquiry</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Your Message</label>
+                <textarea rows="4" placeholder="How can we help you?" required></textarea>
+              </div>
+              <button type="submit" class="btn-submit">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+
+            <!-- Success State -->
+            <div class="success-state" id="advisorSuccess">
+              <i class="fa-solid fa-circle-check success-icon"></i>
+              <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; color: #333; margin-bottom: 15px;">Message Sent!</h3>
+              <p style="color: #666; line-height: 1.6;">Thank you for reaching out. A transfer advisor will review your message and contact you within 24 hours.</p>
+              <button type="button" class="btn-submit closeAdvisorBtn" style="margin-top: 30px; background: #be2ed6;">Done</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
