@@ -18,15 +18,16 @@
     />
 
     <link rel="stylesheet" href="styles.css" />
-  <style>
-    /* Blog Modal Styles */
-    .modal-overlay {
+    <style>
+      /* Blog Modal Styles */
+      .modal-overlay {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
         background: rgba(53, 6, 62, 0.85);
+        -webkit-backdrop-filter: blur(8px);
         backdrop-filter: blur(8px);
         display: none;
         justify-content: center;
@@ -34,12 +35,12 @@
         z-index: 9999;
         opacity: 0;
         transition: opacity 0.4s ease;
-    }
-    .modal-overlay.active {
+      }
+      .modal-overlay.active {
         display: flex;
         opacity: 1;
-    }
-    .college-modal-container {
+      }
+      .college-modal-container {
         background: white;
         width: 100%;
         max-width: 700px;
@@ -52,20 +53,20 @@
         margin: 20px;
         max-height: 90vh;
         overflow-y: auto;
-    }
-    .modal-overlay.active .college-modal-container {
+      }
+      .modal-overlay.active .college-modal-container {
         transform: translateY(0);
-    }
-    .modal-header {
+      }
+      .modal-header {
         position: relative;
         height: 300px;
-    }
-    .modal-banner {
+      }
+      .modal-banner {
         width: 100%;
         height: 100%;
         object-fit: cover;
-    }
-    .modal-badge {
+      }
+      .modal-badge {
         position: absolute;
         bottom: 20px;
         left: 20px;
@@ -75,8 +76,8 @@
         border-radius: 20px;
         font-weight: 600;
         font-size: 14px;
-    }
-    .close-modal {
+      }
+      .close-modal {
         position: absolute;
         top: 20px;
         right: 20px;
@@ -91,30 +92,30 @@
         cursor: pointer;
         z-index: 10;
         font-size: 20px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         transition: all 0.3s ease;
-    }
-    .close-modal:hover {
+      }
+      .close-modal:hover {
         background: #f7a800;
         color: white;
         transform: rotate(90deg);
-    }
-    .modal-body {
+      }
+      .modal-body {
         padding: 30px;
-    }
-    .modal-title {
-        font-family: 'Playfair Display', serif;
+      }
+      .modal-title {
+        font-family: "Playfair Display", serif;
         font-size: 28px;
         color: #35063e;
         margin-bottom: 20px;
-    }
-    .modal-description {
+      }
+      .modal-description {
         color: #4a5568;
         line-height: 1.8;
         font-size: 16px;
-    }
-</style>
-</head>
+      }
+    </style>
+  </head>
   <body>
     <!-- Top Bar -->
     <div class="top-bar">
@@ -124,7 +125,8 @@
             ><i class="fa-regular fa-envelope"></i> info@bbiu.org.lr</a
           >
           <span class="contact-item"
-            ><i class="fa-solid fa-phone"></i> +231-770-370-894 / +231-881-324-323</span
+            ><i class="fa-solid fa-phone"></i> +231-770-370-894 /
+            +231-881-324-323</span
           >
         </div>
         <div class="top-bar-right">
@@ -151,53 +153,127 @@
           </div>
         </div>
 
+        <div class="mobile-nav-toggle">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+
         <nav class="main-nav">
           <ul>
             <li><a href="#" class="active">Home</a></li>
             <li class="has-mega-menu">
-              <a href="#">About Us <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 5px;"></i></a>
+              <a href="#"
+                >About Us
+                <i class="fa-solid fa-chevron-down nav-chevron"></i></a>
               <div class="mega-menu">
                 <div class="mega-menu-content">
                   <ul class="mega-menu-list">
-                    <li><a href="about-overview.html"><i class="fa-solid fa-angle-right"></i> Overview</a></li>
-                    <li><a href="history.html"><i class="fa-solid fa-angle-right"></i> History</a></li>
-                    <li><a href="mission-vision.html"><i class="fa-solid fa-angle-right"></i> Mission & Vision</a></li>
-                    <li><a href="leadership.html"><i class="fa-solid fa-angle-right"></i> Leadership & Directorates</a></li>
-                    <li><a href="affiliates.html"><i class="fa-solid fa-angle-right"></i> Affiliates & Partners</a></li>
+                    <li>
+                      <a href="about-overview.html"
+                        ><i class="fa-solid fa-angle-right"></i> Overview</a
+                      >
+                    </li>
+                    <li>
+                      <a href="history.html"
+                        ><i class="fa-solid fa-angle-right"></i> History</a
+                      >
+                    </li>
+                    <li>
+                      <a href="mission-vision.html"
+                        ><i class="fa-solid fa-angle-right"></i> Mission &
+                        Vision</a
+                      >
+                    </li>
+                    <li>
+                      <a href="leadership.html"
+                        ><i class="fa-solid fa-angle-right"></i> Leadership &
+                        Directorates</a
+                      >
+                    </li>
+                    <li>
+                      <a href="affiliates.html"
+                        ><i class="fa-solid fa-angle-right"></i> Affiliates &
+                        Partners</a
+                      >
+                    </li>
                   </ul>
                 </div>
               </div>
             </li>
             <li class="has-mega-menu">
-              <a href="#">Academics <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 5px;"></i></a>
+              <a href="#"
+                >Academics
+                <i class="fa-solid fa-chevron-down nav-chevron"></i></a>
               <div class="mega-menu">
                 <div class="mega-menu-content">
                   <ul class="mega-menu-list">
-                    <li><a href="academics-overview.html"><i class="fa-solid fa-angle-right"></i> Overview</a></li>
-                    <li><a href="colleges.html"><i class="fa-solid fa-angle-right"></i> Colleges & Schools</a></li>
-                    <li><a href="programs.html"><i class="fa-solid fa-angle-right"></i> Programs</a></li>
-                    <li><a href="calendar.html"><i class="fa-solid fa-angle-right"></i> Academic Calendar</a></li>
-                    <li><a href="library.html"><i class="fa-solid fa-angle-right"></i> Library</a></li>
-                    <li><a href="journals.html"><i class="fa-solid fa-angle-right"></i> BBIU Journals</a></li>
+                    <li>
+                      <a href="academics-overview.html"
+                        ><i class="fa-solid fa-angle-right"></i> Overview</a
+                      >
+                    </li>
+                    <li>
+                      <a href="colleges.html"
+                        ><i class="fa-solid fa-angle-right"></i> Colleges &
+                        Schools</a
+                      >
+                    </li>
+                    <li>
+                      <a href="programs.html"
+                        ><i class="fa-solid fa-angle-right"></i> Programs</a
+                      >
+                    </li>
+                    <li>
+                      <a href="calendar.html"
+                        ><i class="fa-solid fa-angle-right"></i> Academic
+                        Calendar</a
+                      >
+                    </li>
+                    <li>
+                      <a href="library.html"
+                        ><i class="fa-solid fa-angle-right"></i> Library</a
+                      >
+                    </li>
+                    <li>
+                      <a href="journals.html"
+                        ><i class="fa-solid fa-angle-right"></i> BBIU
+                        Journals</a
+                      >
+                    </li>
                   </ul>
                 </div>
               </div>
             </li>
             <li class="has-mega-menu">
-              <a href="#">Admissions <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 5px;"></i></a>
+              <a href="#"
+                >Admissions
+                <i class="fa-solid fa-chevron-down nav-chevron"></i></a>
               <div class="mega-menu">
                 <div class="mega-menu-content">
                   <ul class="mega-menu-list">
-                    <li><a href="admissions-overview.html"><i class="fa-solid fa-angle-right"></i> Overview</a></li>
-                    <li><a href="undergraduate-admissions.html"><i class="fa-solid fa-angle-right"></i> Undergraduate</a></li>
-                    <li><a href="transfer-admissions.html"><i class="fa-solid fa-angle-right"></i> Transfer Students</a></li>
+                    <li>
+                      <a href="admissions-overview.html"
+                        ><i class="fa-solid fa-angle-right"></i> Overview</a
+                      >
+                    </li>
+                    <li>
+                      <a href="undergraduate-admissions.html"
+                        ><i class="fa-solid fa-angle-right"></i>
+                        Undergraduate</a
+                      >
+                    </li>
+                    <li>
+                      <a href="transfer-admissions.html"
+                        ><i class="fa-solid fa-angle-right"></i> Transfer
+                        Students</a
+                      >
+                    </li>
                   </ul>
                 </div>
               </div>
             </li>
             <li><a href="student-life.html">Student Life</a></li>
             <li class="search-icon">
-              <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+              <a href="#" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></a>
             </li>
           </ul>
         </nav>
@@ -206,51 +282,70 @@
 
     <!-- Hero Section (Carousel) -->
     <section class="hero-slider">
-        <!-- Slide 1 -->
-        <div class="hero-slide active" style="background-image: url('assets/WhatsApp%20Image%202026-03-11%20at%206.48.33%20AM.jpeg');">
-            <div class="hero-overlay"></div>
-            <div class="container hero-container">
-                <div class="hero-content">
-                    <h3 class="hero-subtitle">The Best University Of The State</h3>
-                    <h1 class="hero-title">Best Brain<br>International University</h1>
-                    <a href="#" class="btn-primary">Take A Tour</a>
-                </div>
-            </div>
+      <!-- Slide 1 -->
+      <div
+        class="hero-slide active"
+        style="
+          background-image: url(&quot;assets/WhatsApp%20Image%202026-03-11%20at%206.48.33%20AM.jpeg&quot;);
+        "
+      >
+        <div class="hero-overlay"></div>
+        <div class="container hero-container">
+          <div class="hero-content">
+            <h3 class="hero-subtitle">The Best University Of The State</h3>
+            <h1 class="hero-title">Best Brain<br />International University</h1>
+            <a href="#" class="btn-primary">Take A Tour</a>
+          </div>
         </div>
+      </div>
 
-        <!-- Slide 2 -->
-        <div class="hero-slide" style="background-image: url('assets/WhatsApp%20Image%202026-03-11%20at%206.48.33%20AM%20(1).jpeg');">
-            <div class="hero-overlay"></div>
-            <div class="container hero-container">
-                <div class="hero-content">
-                    <h3 class="hero-subtitle">Empowering Global Change</h3>
-                    <h1 class="hero-title">Shaping<br>Future Leaders</h1>
-                    <a href="#" class="btn-primary">Learn How</a>
-                </div>
-            </div>
+      <!-- Slide 2 -->
+      <div
+        class="hero-slide"
+        style="
+          background-image: url(&quot;assets/WhatsApp%20Image%202026-03-11%20at%206.48.33%20AM%20(1).jpeg&quot;);
+        "
+      >
+        <div class="hero-overlay"></div>
+        <div class="container hero-container">
+          <div class="hero-content">
+            <h3 class="hero-subtitle">Empowering Global Change</h3>
+            <h1 class="hero-title">Shaping<br />Future Leaders</h1>
+            <a href="#" class="btn-primary">Learn How</a>
+          </div>
         </div>
+      </div>
 
-        <!-- Slide 3 -->
-        <div class="hero-slide" style="background-image: url('assets/WhatsApp%20Image%202026-03-11%20at%206.48.34%20AM.jpeg');">
-            <div class="hero-overlay"></div>
-            <div class="container hero-container">
-                <div class="hero-content">
-                    <h3 class="hero-subtitle">State-Of-The-Art Facilities</h3>
-                    <h1 class="hero-title">Innovating<br>Tomorrow's World</h1>
-                    <a href="#" class="btn-primary">Explore Research</a>
-                </div>
-            </div>
+      <!-- Slide 3 -->
+      <div
+        class="hero-slide"
+        style="
+          background-image: url(&quot;assets/WhatsApp%20Image%202026-03-11%20at%206.48.34%20AM.jpeg&quot;);
+        "
+      >
+        <div class="hero-overlay"></div>
+        <div class="container hero-container">
+          <div class="hero-content">
+            <h3 class="hero-subtitle">State-Of-The-Art Facilities</h3>
+            <h1 class="hero-title">Innovating<br />Tomorrow's World</h1>
+            <a href="#" class="btn-primary">Explore Research</a>
+          </div>
         </div>
+      </div>
 
-        <!-- Carousel Controls -->
-        <button class="slider-nav slider-prev"><i class="fa-solid fa-chevron-left"></i></button>
-        <button class="slider-nav slider-next"><i class="fa-solid fa-chevron-right"></i></button>
-        
-        <div class="slider-dots">
-            <span class="slider-dot active"></span>
-            <span class="slider-dot"></span>
-            <span class="slider-dot"></span>
-        </div>
+      <!-- Carousel Controls -->
+      <button class="slider-nav slider-prev" aria-label="Previous Slide">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <button class="slider-nav slider-next" aria-label="Next Slide">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+
+      <div class="slider-dots">
+        <span class="slider-dot active"></span>
+        <span class="slider-dot"></span>
+        <span class="slider-dot"></span>
+      </div>
     </section>
 
     <!-- Info Cards Section -->
@@ -292,256 +387,366 @@
         </div>
       </div>
     </section>
-      <!-- About Us Section -->
+    <!-- About Us Section -->
     <section class="about-section pt-100 pb-100">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-content">
-                    <h5 class="section-subtitle">About Our University</h5>
-                    <h2 class="section-title">A Few Words About the University</h2>
-                    <p class="about-text">Best Brains International University (BBIU) is a private institution of higher learning located in Liberia, West Africa.
-Established in 2018 and opened in 2021, BBIU is accredited by the National Commission on Higher Education of
-Liberia to grant a bachelor's degree. The university offers undergraduate degree programs in Education, Business
-Administration, Liberal Arts, and Information Technology. BBIU is also involved in various community outreach
-programs and character-building initiatives to foster a multicultural environment and promote global citizenship.</p>
-                    <ul class="about-features">
-                        <li><i class="fa-solid fa-check-circle"></i> World-class Academic Programs</li>
-                        <li><i class="fa-solid fa-check-circle"></i> State-of-the-art Facilities & Labs</li>
-                        <li><i class="fa-solid fa-check-circle"></i> Diverse & Inclusive Campus Life</li>
-                        <li><i class="fa-solid fa-check-circle"></i> Global Networking Opportunities</li>
-                    </ul>
-                    <a href="#" class="btn-primary mt-30">Read More</a>
-                </div>
-                <div class="about-image-wrapper">
-                    <div class="about-image-frame">
-                        <img src="assets/WhatsApp%20Image%202026-03-11%20at%209.27.28%20AM.jpeg" alt="Best Brain International University Building" class="about-img">
-                        <div class="experience-badge">
-                            <span class="exp-years">8</span>
-                            <span class="exp-text">years of<br>Excellence</span>
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-content">
+            <h5 class="section-subtitle">About Our University</h5>
+            <h2 class="section-title">A Few Words About the University</h2>
+            <p class="about-text">
+              Best Brains International University (BBIU) is a private
+              institution of higher learning located in Liberia, West Africa.
+              Established in 2018 and opened in 2021, BBIU is accredited by the
+              National Commission on Higher Education of Liberia to grant a
+              bachelor's degree. The university offers undergraduate degree
+              programs in Education, Business Administration, Liberal Arts, and
+              Information Technology. BBIU is also involved in various community
+              outreach programs and character-building initiatives to foster a
+              multicultural environment and promote global citizenship.
+            </p>
+            <ul class="about-features">
+              <li>
+                <i class="fa-solid fa-check-circle"></i> World-class Academic
+                Programs
+              </li>
+              <li>
+                <i class="fa-solid fa-check-circle"></i> State-of-the-art
+                Facilities & Labs
+              </li>
+              <li>
+                <i class="fa-solid fa-check-circle"></i> Diverse & Inclusive
+                Campus Life
+              </li>
+              <li>
+                <i class="fa-solid fa-check-circle"></i> Global Networking
+                Opportunities
+              </li>
+            </ul>
+            <a href="#" class="btn-primary mt-30">Read More</a>
+          </div>
+          <div class="about-image-wrapper">
+            <div class="about-image-frame">
+              <img
+                src="assets/WhatsApp%20Image%202026-03-11%20at%209.27.28%20AM.jpeg"
+                alt="Best Brain International University Building"
+                class="about-img"
+              />
+              <div class="experience-badge">
+                <span class="exp-years">8</span>
+                <span class="exp-text">years of<br />Excellence</span>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Featured Courses Section -->
     <section class="courses-section pt-100 pb-100 bg-light">
-        <div class="container">
-            <div class="section-header text-center mb-50">
-                <h5 class="section-subtitle">Academics</h5>
-                <h2 class="section-title">Featured Faculties</h2>
-                <div class="title-separator"></div>
-            </div>
-            
-            <div class="courses-grid">
-                <!-- Course 1 -->
-                <div class="course-card">
-                    <div class="course-img-wrapper">
-                        <img src="assets/home_faculty_bus.jpg" alt="Business Administration" class="course-img">
-                        <div class="course-category">Business</div>
-                    </div>
-                    <div class="course-content">
-                        <div class="course-meta">
-                            <span><i class="fa-solid fa-user"></i> 120 Students</span>
-                            <span><i class="fa-solid fa-clock"></i> 4 Years</span>
-                        </div>
-                        <h3 class="course-title"><a href="#">Business Administration & Management</a></h3>
-                        <p class="course-desc">Developing future leaders with comprehensive knowledge of modern business practices and strategies.</p>
-                        <div class="course-footer">
-                            <a href="#" class="course-link">View Program <i class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Course 2 -->
-                <div class="course-card">
-                    <div class="course-img-wrapper">
-                        <img src="assets/home_faculty_tech.jpg" alt="Computer Science" class="course-img">
-                        <div class="course-category">Technology</div>
-                    </div>
-                    <div class="course-content">
-                        <div class="course-meta">
-                            <span><i class="fa-solid fa-user"></i> 85 Students</span>
-                            <span><i class="fa-solid fa-clock"></i> 4 Years</span>
-                        </div>
-                        <h3 class="course-title"><a href="#">Computer Science & AI Engineering</a></h3>
-                        <p class="course-desc">Pioneering the future of technology with rigorous training in software development and artificial intelligence.</p>
-                        <div class="course-footer">
-                            <a href="#" class="course-link">View Program <i class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Course 3 -->
-                <div class="course-card">
-                    <div class="course-img-wrapper">
-                        <img src="assets/home_faculty_arts.jpg" alt="Arts & Humanities" class="course-img">
-                        <div class="course-category">Arts</div>
-                    </div>
-                    <div class="course-content">
-                        <div class="course-meta">
-                            <span><i class="fa-solid fa-user"></i> 150 Students</span>
-                            <span><i class="fa-solid fa-clock"></i> 3 Years</span>
-                        </div>
-                        <h3 class="course-title"><a href="#">Arts & Contemporary Humanities</a></h3>
-                        <p class="course-desc">Fostering creativity and critical thinking through a comprehensive exploration of human culture and history.</p>
-                        <div class="course-footer">
-                            <a href="#" class="course-link">View Program <i class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-50">
-                <a href="programs.html" class="btn-outline">View All Programs</a>
-            </div>
+      <div class="container">
+        <div class="section-header text-center mb-50">
+          <h5 class="section-subtitle">Academics</h5>
+          <h2 class="section-title">Featured Faculties</h2>
+          <div class="title-separator"></div>
         </div>
+
+        <div class="courses-grid">
+          <!-- Course 1 -->
+          <div class="course-card">
+            <div class="course-img-wrapper">
+              <img
+                src="assets/home_faculty_bus.jpg"
+                alt="Business Administration"
+                class="course-img"
+              />
+              <div class="course-category">Business</div>
+            </div>
+            <div class="course-content">
+              <div class="course-meta">
+                <span><i class="fa-solid fa-user"></i> 120 Students</span>
+                <span><i class="fa-solid fa-clock"></i> 4 Years</span>
+              </div>
+              <h3 class="course-title">
+                <a href="#">Business Administration & Management</a>
+              </h3>
+              <p class="course-desc">
+                Developing future leaders with comprehensive knowledge of modern
+                business practices and strategies.
+              </p>
+              <div class="course-footer">
+                <a href="#" class="course-link"
+                  >View Program <i class="fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Course 2 -->
+          <div class="course-card">
+            <div class="course-img-wrapper">
+              <img
+                src="assets/home_faculty_tech.jpg"
+                alt="Computer Science"
+                class="course-img"
+              />
+              <div class="course-category">Technology</div>
+            </div>
+            <div class="course-content">
+              <div class="course-meta">
+                <span><i class="fa-solid fa-user"></i> 85 Students</span>
+                <span><i class="fa-solid fa-clock"></i> 4 Years</span>
+              </div>
+              <h3 class="course-title">
+                <a href="#">Computer Science & AI Engineering</a>
+              </h3>
+              <p class="course-desc">
+                Pioneering the future of technology with rigorous training in
+                software development and artificial intelligence.
+              </p>
+              <div class="course-footer">
+                <a href="#" class="course-link"
+                  >View Program <i class="fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Course 3 -->
+          <div class="course-card">
+            <div class="course-img-wrapper">
+              <img
+                src="assets/home_faculty_arts.jpg"
+                alt="Arts & Humanities"
+                class="course-img"
+              />
+              <div class="course-category">Arts</div>
+            </div>
+            <div class="course-content">
+              <div class="course-meta">
+                <span><i class="fa-solid fa-user"></i> 150 Students</span>
+                <span><i class="fa-solid fa-clock"></i> 3 Years</span>
+              </div>
+              <h3 class="course-title">
+                <a href="#">Arts & Contemporary Humanities</a>
+              </h3>
+              <p class="course-desc">
+                Fostering creativity and critical thinking through a
+                comprehensive exploration of human culture and history.
+              </p>
+              <div class="course-footer">
+                <a href="#" class="course-link"
+                  >View Program <i class="fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-50">
+          <a href="programs.html" class="btn-outline">View All Programs</a>
+        </div>
+      </div>
     </section>
 
     <!-- News & Blog Section -->
-    <section class="blog-section pt-100 pb-100" style="background-color: #f8fafc;">
-        <div class="container">
-            <div class="section-title text-center mb-60">
-                <h5 style="color: #f7a800; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; display: block;">Stay Updated</h5>
-                <h2 style="font-family: 'Playfair Display', serif; font-size: 42px; color: #be2ed6;">Latest News & Blogs</h2>
-                <div class="title-line mx-auto" style="width: 70px; height: 3px; background: #be2ed6; margin-top: 15px;"></div>
-            </div>
-
-            <div class="blog-grid">
-                <!-- Blog 1 -->
-                <article class="blog-card">
-                    <div class="blog-img-wrapper">
-                        <img src="assets/blog_success.jpg" alt="Academic Excellence" class="blog-img">
-                        <div class="blog-date"><span>15</span><br>Mar</div>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-category">Academics</div>
-                        <h3 class="blog-title"><a href="#">Pioneering Research in AI and Sustainable Energy</a></h3>
-                        <p class="blog-desc">Our engineering department announces a breakthrough in renewable energy integration using AI-driven smart grids...</p>
-                        <a href="#" class="read-more" data-blog="ai-research">Read More <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <!-- Blog 2 -->
-                <article class="blog-card">
-                    <div class="blog-img-wrapper">
-                        <img src="assets/blog_event.jpg" alt="Campus Life" class="blog-img">
-                        <div class="blog-date"><span>12</span><br>Mar</div>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-category">Campus Life</div>
-                        <h3 class="blog-title"><a href="#">Annual Cultural Festival: A Celebration of Diversity</a></h3>
-                        <p class="blog-desc">Celebrating the rich tapestry of cultures that make BBIU unique, this year's festival saw record participation...</p>
-                        <a href="#" class="read-more" data-blog="cultural-fest">Read More <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <!-- Blog 3 -->
-                <article class="blog-card">
-                    <div class="blog-img-wrapper">
-                        <img src="assets/blog_leadership.jpg" alt="Future Impact" class="blog-img">
-                        <div class="blog-date"><span>10</span><br>Mar</div>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-category">Leadership</div>
-                        <h3 class="blog-title"><a href="#">Empowering the Next Generation of Global Leaders</a></h3>
-                        <p class="blog-desc">A look into how BBIU's leadership programs are preparing students for impactful careers on the international stage...</p>
-                        <a href="#" class="read-more" data-blog="leadership-empowerment">Read More <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </article>
-            </div>
+    <section class="blog-section pt-100 pb-100 blog-section-alt">
+      <div class="container">
+        <div class="section-title text-center mb-60">
+          <h5 class="section-subtitle-alt">Stay Updated</h5>
+          <h2 class="section-title-alt">Latest News & Blogs</h2>
+          <div class="title-line-alt title-line mx-auto"></div>
         </div>
+
+        <div class="blog-grid">
+          <!-- Blog 1 -->
+          <article class="blog-card">
+            <div class="blog-img-wrapper">
+              <img
+                src="assets/blog_success.jpg"
+                alt="Academic Excellence"
+                class="blog-img"
+              />
+              <div class="blog-date"><span>15</span><br />Mar</div>
+            </div>
+            <div class="blog-content">
+              <div class="blog-category">Academics</div>
+              <h3 class="blog-title">
+                <a href="#">Pioneering Research in AI and Sustainable Energy</a>
+              </h3>
+              <p class="blog-desc">
+                Our engineering department announces a breakthrough in renewable
+                energy integration using AI-driven smart grids...
+              </p>
+              <a href="#" class="read-more" data-blog="ai-research"
+                >Read More <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </div>
+          </article>
+
+          <!-- Blog 2 -->
+          <article class="blog-card">
+            <div class="blog-img-wrapper">
+              <img
+                src="assets/blog_event.jpg"
+                alt="Campus Life"
+                class="blog-img"
+              />
+              <div class="blog-date"><span>12</span><br />Mar</div>
+            </div>
+            <div class="blog-content">
+              <div class="blog-category">Campus Life</div>
+              <h3 class="blog-title">
+                <a href="#"
+                  >Annual Cultural Festival: A Celebration of Diversity</a
+                >
+              </h3>
+              <p class="blog-desc">
+                Celebrating the rich tapestry of cultures that make BBIU unique,
+                this year's festival saw record participation...
+              </p>
+              <a href="#" class="read-more" data-blog="cultural-fest"
+                >Read More <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </div>
+          </article>
+
+          <!-- Blog 3 -->
+          <article class="blog-card">
+            <div class="blog-img-wrapper">
+              <img
+                src="assets/blog_leadership.jpg"
+                alt="Future Impact"
+                class="blog-img"
+              />
+              <div class="blog-date"><span>10</span><br />Mar</div>
+            </div>
+            <div class="blog-content">
+              <div class="blog-category">Leadership</div>
+              <h3 class="blog-title">
+                <a href="#">Empowering the Next Generation of Global Leaders</a>
+              </h3>
+              <p class="blog-desc">
+                A look into how BBIU's leadership programs are preparing
+                students for impactful careers on the international stage...
+              </p>
+              <a href="#" class="read-more" data-blog="leadership-empowerment"
+                >Read More <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
 
     <!-- Footer Section -->
     <footer class="main-footer">
-        <div class="footer-top pt-80 pb-60">
-            <div class="container">
-                <div class="footer-grid">
-                    <div class="footer-widget widget-about">
-                    <a href="index.html" class="footer-brand mb-30" style="text-decoration: none;">
-                        <img src="assets/logo.png" alt="Footer Logo" class="footer-logo-img">
-                        <div class="footer-logo-text">
-                            <span class="footer-logo-title">Best Brain</span>
-                            <span class="footer-logo-subtitle">International University</span>
-                        </div>
-                    </a>
-                        <p>Best Brain International University is a premier institution dedicated to excellence in teaching, learning, and research, developing leaders who make a difference globally.</p>
-                        <div class="social-links mt-30">
-                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
-                    </div>
-                    
-                    <div class="footer-widget widget-links">
-                        <h4 class="widget-title">Quick Links</h4>
-                        <ul>
-                            <li><a href="about-overview.html">About University</a></li>
-                            <li><a href="programs.html">Academic Programs</a></li>
-                            <li><a href="admissions-overview.html">Admissions Info</a></li>
-                            <li><a href="student-life.html">Student Life</a></li>
-                            <li><a href="#">University Events</a></li>
-                        </ul>
-                    </div>
+      <div class="footer-top pt-80 pb-60">
+        <div class="container">
+          <div class="footer-grid">
+            <div class="footer-widget widget-about">
+              <a href="index.html" class="footer-brand mb-30">
+                <img
+                  src="assets/logo.png"
+                  alt="Footer Logo"
+                  class="footer-logo-img"
+                />
+                <div class="footer-logo-text">
+                  <span class="footer-logo-title">Best Brain</span>
+                  <span class="footer-logo-subtitle"
+                    >International University</span
+                  >
+                </div>
+              </a>
+              <p>
+                Best Brain International University is a premier institution
+                dedicated to excellence in teaching, learning, and research,
+                developing leaders who make a difference globally.
+              </p>
+              <div class="social-links mt-30">
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              </div>
+            </div>
 
-                    <div class="footer-widget widget-links">
-                        <h4 class="widget-title">Resources</h4>
-                        <ul>
-                            <li><a href="#">Student Portal</a></li>
-                            <li><a href="#">Library Catalogs</a></li>
-                            <li><a href="#">Alumni Network</a></li>
-                            <li><a href="#">Career Services</a></li>
-                            <li><a href="#">Campus Map</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-widget widget-contact">
-                        <h4 class="widget-title">Contact Us</h4>
-                        <ul class="contact-info">
-                            <li><i class="fa-solid fa-location-dot"></i> Guest House Road, Thinker’s Village, RIA Road, Paynesville, Liberia</li>
-                            <li><i class="fa-solid fa-phone"></i> +231-770-370-894 / +231-881-324-323</li>
-                            <li><i class="fa-solid fa-envelope"></i> info@bbiu.org.lr</li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="footer-widget widget-links">
+              <h4 class="widget-title">Quick Links</h4>
+              <ul>
+                <li><a href="about-overview.html">About University</a></li>
+                <li><a href="programs.html">Academic Programs</a></li>
+                <li><a href="admissions-overview.html">Admissions Info</a></li>
+                <li><a href="student-life.html">Student Life</a></li>
+                <li><a href="#">University Events</a></li>
+              </ul>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="footer-bottom-inner">
-                    <p class="copyright">&copy; 2026 Best Brain International University/ Developed by Leda Group Inc. All rights reserved.</p>
-                    <div class="footer-bottom-links">
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Use</a>
-                    </div>
-                </div>
+
+            <div class="footer-widget widget-links">
+              <h4 class="widget-title">Resources</h4>
+              <ul>
+                <li><a href="#">Student Portal</a></li>
+                <li><a href="#">Library Catalogs</a></li>
+                <li><a href="#">Alumni Network</a></li>
+                <li><a href="#">Career Services</a></li>
+                <li><a href="#">Campus Map</a></li>
+              </ul>
             </div>
+
+            <div class="footer-widget widget-contact">
+              <h4 class="widget-title">Contact Us</h4>
+              <ul class="contact-info">
+                <li>
+                  <i class="fa-solid fa-location-dot"></i> Guest House Road,
+                  Thinker’s Village, RIA Road, Paynesville, Liberia
+                </li>
+                <li>
+                  <i class="fa-solid fa-phone"></i> +231-770-370-894 /
+                  +231-881-324-323
+                </li>
+                <li><i class="fa-solid fa-envelope"></i> info@bbiu.org.lr</li>
+              </ul>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="footer-bottom-inner">
+            <p class="copyright">
+              &copy; 2026 Best Brain International University/ Developed by Leda
+              Group Inc. All rights reserved.
+            </p>
+            <div class="footer-bottom-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Use</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
     <script src="script.js"></script>
 
     <!-- Blog Detail Modal -->
     <div id="blogModal" class="modal-overlay">
-        <div class="college-modal-container">
-            <button class="close-modal closeBlogModal">&times;</button>
-            <div class="modal-header">
-                <img id="modalBlogImage" src="" alt="" class="modal-banner">
-                <div class="modal-badge" id="modalBlogCategory">Category</div>
-            </div>
-            <div class="modal-body">
-                <h2 id="modalBlogTitle" class="modal-title">Blog Title</h2>
-                <div class="modal-meta" style="margin-bottom: 20px; color: #64748b; font-size: 14px;">
-                    <span id="modalBlogDate"><i class="fa-solid fa-calendar-days"></i> Date</span>
-                </div>
-                <div id="modalBlogContent" class="modal-description">
-                    <!-- Full content goes here -->
-                </div>
-            </div>
+      <div class="college-modal-container">
+        <button class="close-modal closeBlogModal">&times;</button>
+        <div class="modal-header">
+          <img id="modalBlogImage" src="" alt="" class="modal-banner" />
+          <div class="modal-badge" id="modalBlogCategory">Category</div>
         </div>
+        <div class="modal-body">
+          <h2 id="modalBlogTitle" class="modal-title">Blog Title</h2>
+          <div class="modal-meta modal-meta-alt">
+            <span id="modalBlogDate"
+              ><i class="fa-solid fa-calendar-days"></i> Date</span
+            >
+          </div>
+          <div id="modalBlogContent" class="modal-description">
+            <!-- Full content goes here -->
+          </div>
+        </div>
+      </div>
     </div>
-
-</body>
+  </body>
 </html>
