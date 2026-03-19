@@ -1,0 +1,19 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "BBIU",
+    "BBIUs",
+    "NCHE",
+    "Paynesville",
+    "WASSCE",
+    "WAEC",
+    "Mensah",
+    "xmark",
+    "Partee",
+    "changemakers",
+    "Liberia",
+    "Best-Brain-University"
+  ],
+  "ignorePaths": [".git", "assets/**"]
+}

@@ -26,7 +26,7 @@ const blogLogic = `
             image: 'assets/blog_event.jpg',
             content: \`<p>Celebrating the rich tapestry of cultures that make BBIU unique, this year's Annual Cultural Festival saw record participation from over 20 different countries. The campus was transformed into a vibrant global village, showcasing traditional music, dance, and culinary delights.</p>
                       <p>The event kicked off with a Parade of Nations, followed by a series of workshops and performances. "Diversity is our greatest strength," remarked Vice-Chancellor during the opening ceremony. "Seeing our students come together to celebrate their heritage is truly inspiring."</p>
-                      <p>The festival concluded with a grand concert featuring international artists and student talent. It serves as a reminder of the inclusive and multicultural environment we strive to maintain at Best Brain International University.</p>\`
+                      <p>The festival concluded with a grand concert featuring international artists and student talent. It serves as a reminder of the inclusive and multicultural environment we strive to maintain at Best Brains International University.</p>\`
         },
         'leadership-empowerment': {
             title: 'Empowering the Next Generation of Global Leaders',
