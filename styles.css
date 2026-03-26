@@ -2353,3 +2353,48 @@ a {
   line-height: 1.8;
   font-size: 16px;
 }
+
+/* ================= Nav Webmail Button ================= */
+.nav-webmail-btn {
+  background-color: #f7a800; /* University accent color (orange/gold) */
+  color: white !important;
+  padding: 8px 22px !important;
+  border-radius: 25px;
+  font-weight: 700 !important;
+  font-size: 13px !important;
+  margin-top: -8px; /* Alignment adjustment for the navbar */
+  box-shadow: 0 4px 12px rgba(247, 168, 0, 0.3);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  border: 2px solid transparent;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.nav-webmail-btn:hover {
+  background-color: #be2ed6 !important; /* Secondary university color (purple) */
+  color: white !important;
+  box-shadow: 0 8px 20px rgba(190, 46, 214, 0.4);
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-webmail-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(190, 46, 214, 0.4);
+}
+
+/* Adjusting main nav list behavior for the button */
+.main-nav ul li:has(.nav-webmail-btn) a::after {
+  display: none !important; /* Remove the active underline for the button itself */
+}
+
+/* Responsive adjustment for mobile menu */
+@media (max-width: 991px) {
+  .nav-webmail-btn {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    width: fit-content;
+    text-align: center;
+  }
+}
