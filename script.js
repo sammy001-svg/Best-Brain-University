@@ -572,7 +572,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   };
 
-  document.querySelectorAll(".read-more[data-blog]").forEach((btn) => {
+  document.querySelectorAll("[data-blog]").forEach((btn) => {
     btn.addEventListener("click", (e) => {
       e.preventDefault();
       const blogId = btn.getAttribute("data-blog");
